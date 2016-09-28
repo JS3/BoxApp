@@ -15,7 +15,5 @@ angular.module('services.module1', ['ngRoute','ngResource'])
     })
     .factory('tasks', function($resource) {
             
-        return $resource('/task',{},{ get: { method: 'GET', isArray: true
-} });
+        return $resource('/task',{},{ get: { method: 'GET', isArray: true} });
     });
-

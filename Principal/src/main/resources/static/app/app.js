@@ -6,6 +6,8 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.view3',
+  'myApp.perfilMensajero',
+  'myApp.viaje',
   'myApp.viewLogin',
   'services.module1',
   'myApp.version'
@@ -27,9 +29,4 @@ $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                     $rootScope.authenticated = false;
                 });
             };
-
 }]);
-
-        
-        
-

@@ -1,0 +1,13 @@
+<p>Escriba aquí porque desea convertirse en mensajero.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+
+<div  ng-show="authenticated">
+    Razón : <input ng-model = "razon"> <br>
+    <button ng-click="agregarMensajero()"> Incribirse </button>
+</div>                    
+<div  ng-show="!authenticated">
+    <h1> Usted no esta autenticado</h1>
+</div>                    

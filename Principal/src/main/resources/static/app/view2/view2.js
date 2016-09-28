@@ -19,7 +19,6 @@ angular.module('myApp.view2', ['ngRoute'])
             if (!isNaN($scope.priority)){
                 if($scope.priority<=10  && $scope.priority>0){
                     
-                    
                     var newitem={"description":$scope.description,"priority":$scope.priority};
                     
                     tasks.save(newitem,function(){
@@ -34,11 +33,6 @@ angular.module('myApp.view2', ['ngRoute'])
                
             }else{
                 alert("error priority");
-            }
- 
-            
-           
-            
+            }           
         }
-
 }]);

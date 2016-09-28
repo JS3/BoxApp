@@ -1,0 +1,20 @@
+<p>Escriba aquí su proximo viaje.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+
+<div  ng-show="authenticated">
+<div  ng-show="mensajeroAprobado">
+    Origen : <input> <br>
+    Destino : <input> <br>
+    Fecha : <input> <br>
+    <button ng-click="agregarMensajero()"> Subir Viaje </button>
+</div>                    
+</div>                    
+<div  ng-show="!mensajeroAprobado">
+    <h1> Usted no es un mensajero aprobado.</h1>
+</div>                    
+<div  ng-show="!authenticated">
+    <h1> Usted no esta autenticado</h1>
+</div>                    

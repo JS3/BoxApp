@@ -25,5 +25,4 @@ angular.module('myApp.view3', ['ngRoute'])
             $scope.taskList = orderBy($scope.taskList, predicate, $scope.reverse);
         };
         $scope.order('age', true);
-
 }]);
