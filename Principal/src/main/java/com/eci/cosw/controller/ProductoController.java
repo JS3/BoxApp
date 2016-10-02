@@ -116,4 +116,50 @@ public class ProductoController {
         List<Producto> productos = null;
         return productos;
     }
+
+    /**
+     * Busca y retorna todos los productos entregados por entregar
+     * @return
+     */
+    @RequestMapping(value = "/entregados", method = RequestMethod.GET)
+    public List<Producto> getProductosEntregados() {
+        List<Producto> productos = null;
+        return productos;
+    }
+
+    /**
+     * Busca y retorna todos los productos entregados por entregar de un pais sin importar si
+     * es el pais de origen o de destino
+     * @param pais
+     * @return
+     */
+    @RequestMapping(value = "/entregados/{pais}", method = RequestMethod.GET)
+    public List<Producto> getProductosEntregadosPais(@PathVariable("pais") String pais) {
+        List<Producto> productos = null;
+        return productos;
+    }
+
+    /**
+     * Busca y retorna todos los productos entregados por entregar que tienen como pais de
+     * origen al pais especificado
+     * @param pais
+     * @return
+     */
+    @RequestMapping(value = "/entregados/{pais}/origen", method = RequestMethod.GET)
+    public List<Producto> getProductosEntregadosPaisOrigen(@PathVariable("pais") String pais) {
+        List<Producto> productos = null;
+        return productos;
+    }
+
+    /**
+     * Busca y retorna todos los productos entregados por entregar que tienen como pais de
+     * destino al pais especificado
+     * @param pais
+     * @return
+     */
+    @RequestMapping(value = "/entregados/{pais}/destino", method = RequestMethod.GET)
+    public List<Producto> getProductosEntregadosPaisDestino(@PathVariable("pais") String pais) {
+        List<Producto> productos = null;
+        return productos;
+    }
 }
