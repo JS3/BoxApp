@@ -14,7 +14,7 @@ angular.module('myApp.viewLogin', ['ngRoute'])
     var authenticate = function (credentials, callback) {
 
     var headers = credentials ? {authorization: "Basic "
-                + btoa(credentials.username + ":" + credentials.password)
+                + btoa(credentials.username + ":" + CryptoJS.SHA1(credentials.password))
     } : {};
 
         $http.get('/app/user', {headers: headers}).success(function (data) {

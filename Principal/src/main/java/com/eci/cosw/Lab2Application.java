@@ -1,5 +1,7 @@
 package com.eci.cosw;
 
+import com.eci.cosw.stub.UsersStub;
+import com.eci.cosw.stub.UsersStubImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -23,6 +25,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
 
 @SpringBootApplication
 public class Lab2Application {
@@ -39,7 +42,14 @@ public class Lab2Application {
 
         @Override
         protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-            builder.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+            // Permisos quemados en codigo
+            UsersStub usersStub = new UsersStubImpl();
+            Map<String, String> users = usersStub.getUsers();
+            builder.inMemoryAuthentication().withUser("julian").password(users.get("julian")).roles("USER");
+            builder.inMemoryAuthentication().withUser("diana").password(users.get("diana")).roles("USER");
+            builder.inMemoryAuthentication().withUser("juan").password(users.get("juan")).roles("USER");
+            builder.inMemoryAuthentication().withUser("ramiro").password(users.get("ramiro")).roles("USER");
+            builder.inMemoryAuthentication().withUser("jose").password(users.get("jose")).roles("USER");
         }
 
         @Override
