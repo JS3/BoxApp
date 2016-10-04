@@ -1,0 +1,21 @@
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+
+
+ <div  ng-show="authenticated">
+    
+                <label for='title'>Origen</label><input  id='Origen' name='Origen' type="text" ng-model= "Origen"><br><br>
+                <label for='content'>Destino</label><input  id='Destino' name='Destino' type="text" ng-model= "Destino"><br><br>
+                <label for='content'>Fecha Ida</label><input  id='ida' name='ida' type="text" ng-model= "Ida"><br><br>
+                <label for='content'>Fecha Regreso</label><input  id='llegada' name='llegada' type="text" ng-model= "Llegada"><br><br><br> 
+     
+     
+     
+    <button ng-click="agregarViaje()"> SEND </button>
+</div>                    
+ <div  ng-show="!authenticated">
+    <h1> Usted no esta autenticado</h1>
+</div>                    
