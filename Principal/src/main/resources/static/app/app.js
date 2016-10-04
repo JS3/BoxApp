@@ -6,9 +6,8 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.view3',
-  'myApp.viaje',
-  'myApp.misviajes',
   'myApp.viewLogin',
+  'myApp.viewRegistroSolicitante'
   'services.module1',
   'myApp.version'
 ]).

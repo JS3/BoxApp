@@ -6,11 +6,9 @@
 "license": "MIT",
 "private": true,
 "dependencies": {
-      "angular": "^1.5.8",
-      "angular-route": "^1.5.8",
-      "angular-resource": "^1.5.8",
-      "angular-material": "^1.1.1",
-      "bootstrap-css-only": "^3.3.6",
-      "crypto-js" : "3.1.6"
+      "angular": "~1.4.0",
+      "angular-route": "~1.4.0",
+      "angular-resource" : "~1.4.0",
+      "bootstrap-css-only": "~3.3.6"
    }
 }
