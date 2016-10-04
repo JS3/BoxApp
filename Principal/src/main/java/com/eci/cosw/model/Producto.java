@@ -5,8 +5,11 @@ package com.eci.cosw.model;
  */
 public class Producto {
 
+    public final static String ORIGEN  = "ORIGEN";
+    public final static String DESTINO = "DESTINO";
+
     private Integer idProducto; // Autogenerado
-    private String ubicacion; // "Origen" o "Destino"
+    private String ubicacion; // "ORIGEN" o "DESTINO"
     private String nombre;
     private String descripcion;
     private String paisOrigen;
@@ -15,7 +18,7 @@ public class Producto {
     private String ciudadDestino;
     private Double peso;
     private Boolean delicado;
-    private Boolean entregado;
+    private Boolean entregado; // False si no esta entrgado, True D.L.C.
 
     public Producto(Integer idProducto, String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
         this.idProducto = idProducto;

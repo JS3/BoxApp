@@ -1,10 +1,9 @@
 package com.eci.cosw.controller;
 
 import com.eci.cosw.model.Producto;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.eci.cosw.stub.ProductStub;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +14,8 @@ import java.util.List;
 @RequestMapping(value = "/productos")
 public class ProductoController {
 
+    @Autowired
+    private ProductStub productStub;
 
     public ProductoController() {
 
@@ -26,8 +27,7 @@ public class ProductoController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public List<Producto> getProductos() {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductos();
     }
 
     /**
@@ -37,7 +37,7 @@ public class ProductoController {
      */
     @RequestMapping(value = "/{idProducto}", method = RequestMethod.GET)
     public Producto getProductoById(@PathVariable("idProducto") Integer idProducto) {
-        return null;
+        return productStub.getProductoById(idProducto);
     }
 
     /**
@@ -47,8 +47,7 @@ public class ProductoController {
      */
     @RequestMapping(value = "/{nombre}", method = RequestMethod.GET)
     public List<Producto> getProductosByName(@PathVariable("nombre") String nombre) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosByName(nombre);
     }
 
     /**
@@ -57,8 +56,7 @@ public class ProductoController {
      */
     @RequestMapping(value = "/pendientes", method = RequestMethod.GET)
     public List<Producto> getProductosPendientes() {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosPendientes();
     }
 
     /**
@@ -67,8 +65,7 @@ public class ProductoController {
      */
     @RequestMapping(value = "/pendientes/origen", method = RequestMethod.GET)
     public List<Producto> getProductosPendientesOrigen() {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosPendientesOrigen();
     }
 
     /**
@@ -77,8 +74,7 @@ public class ProductoController {
      */
     @RequestMapping(value = "/pendientes/destino", method = RequestMethod.GET)
     public List<Producto> getProductosPendientesDestino() {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosPendientesDestino();
     }
 
     /**
@@ -89,20 +85,18 @@ public class ProductoController {
      */
     @RequestMapping(value = "/pendientes/{pais}", method = RequestMethod.GET)
     public List<Producto> getProductosPendientesPais(@PathVariable("pais") String pais) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosPendientesPais(pais);
     }
 
     /**
      * Busca y retorna todos los productos pendientes por entregar que tienen como pais de
-     * origen al pais especificado
+     * origen el pais especificado
      * @param pais
      * @return
      */
     @RequestMapping(value = "/pendientes/{pais}/origen", method = RequestMethod.GET)
     public List<Producto> getProductosPendientesPaisOrigen(@PathVariable("pais") String pais) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosPendientesPaisOrigen(pais);
     }
 
     /**
@@ -113,53 +107,53 @@ public class ProductoController {
      */
     @RequestMapping(value = "/pendientes/{pais}/destino", method = RequestMethod.GET)
     public List<Producto> getProductosPendientesPaisDestino(@PathVariable("pais") String pais) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosPendientesPaisDestino(pais);
     }
 
     /**
-     * Busca y retorna todos los productos entregados por entregar
+     * Busca y retorna todos los productos entregados
      * @return
      */
     @RequestMapping(value = "/entregados", method = RequestMethod.GET)
     public List<Producto> getProductosEntregados() {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosEntregados();
     }
 
     /**
-     * Busca y retorna todos los productos entregados por entregar de un pais sin importar si
+     * Busca y retorna todos los productos entregados en un pais sin importar si
      * es el pais de origen o de destino
      * @param pais
      * @return
      */
     @RequestMapping(value = "/entregados/{pais}", method = RequestMethod.GET)
     public List<Producto> getProductosEntregadosPais(@PathVariable("pais") String pais) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosEntregadosPais(pais);
     }
 
     /**
-     * Busca y retorna todos los productos entregados por entregar que tienen como pais de
+     * Busca y retorna todos los productos entregados que tienen como pais de
      * origen al pais especificado
      * @param pais
      * @return
      */
     @RequestMapping(value = "/entregados/{pais}/origen", method = RequestMethod.GET)
     public List<Producto> getProductosEntregadosPaisOrigen(@PathVariable("pais") String pais) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosEntregadosPaisOrigen(pais);
     }
 
     /**
-     * Busca y retorna todos los productos entregados por entregar que tienen como pais de
+     * Busca y retorna todos los productos entregados que tienen como pais de
      * destino al pais especificado
      * @param pais
      * @return
      */
     @RequestMapping(value = "/entregados/{pais}/destino", method = RequestMethod.GET)
     public List<Producto> getProductosEntregadosPaisDestino(@PathVariable("pais") String pais) {
-        List<Producto> productos = null;
-        return productos;
+        return productStub.getProductosEntregadosPaisDestino(pais);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public void postProducto(@RequestBody Producto producto){
+        productStub.addProducto(producto);
     }
 }
