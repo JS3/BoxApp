@@ -25,6 +25,11 @@ angular.module('myApp.viewRegistroSolicitante', ['ngRoute'])
     $scope.municipio="":
     $scope.codigoPostal;
 
+    $scope.hacerRegistro = function(){
 
+//    if(($scope.nombre && $scope.primerApellido && $scope.segundoApellido && $scope.cedula && $scope.genero)
+//
+//
+//    }
 
 }]);

@@ -3,49 +3,118 @@
     Showing of 'interpolate' filter:
     {{ 'Current version is v%VERSION%.' | interpolate }}
 
-<form>
-    Nombre:<br>
-    <input type="text" name="nombre"><br>
-    Primer Apellido:<br>
-    <input type="text" name="primerApellido"><br>
-    Segundo Apellido:<br>
-    <input type="text" name="SegundoApellido"><br>
-    Cedula:<br>
-    <input type="text" name="cedula"><br>
-    Email:<br>
-    <input type="email" name="email"><br>
-    Edad:<br>
-    <input type="number" name="edad" min="18" ><br>
-    Fecha de Nacimiento: <br>
-    <input type="date" name="cumpleaños"><br>
-    Seleccione su genero: <br>
-    <form>
-        <input type="radio" name="generoM" value="male" checked> Hombre<br>
-        <input type="radio" name="generoF" value="female"> Mujer<br>
-        <input type="radio" name="generoO" value="other"> Otro<br>
-    </form>
-    Telefono: <br>
-    <input type="tel" name="telefono"><br>
-    Direccion: <br>
-    <input type="text" name="direccion"><br>
-    Pais: <br>
-    <select name="pais">
-        <option value="1">Argentina</option>
-        <option value="2">España</option>
-        <option value="3">México</option>
-        <option value="4">Guatemala</option>
-        <option value="5">Honduras</option>
-        <option value="7">El Salvador</option>
-        <option value="8">Venezuela</option>
-        <option value="9">Colombia</option>
-        <option value="10">Cuba</option>
-        <option value="11">Bolivia</option>
-        <option value="13">Perú</option>
-        <option value="14">Ecuador</option>
-        <option value="15">Paraguay</option>
-        <option value="16">Uruguay</option>
-        <option value="17">Chile</option>
-    </select><br>
-    Codigo postal: <br>
-    <input type="text" name="codigoP"><br>
+<script>
+    function revisar() {
+    if(formulario.nombre == "") { alert('Debes poner el nombre') ; return false ; }
+    if(formulario.primerApellido == "") { alert('Debes poner el país') ; return false ; }
+    if(formulario.SegundoApellido == "") { alert('Debes poner el email') ; return false ; }
+    }
+</script>
+
+
+<form name="formulario" method="post" onsubmit="return revisar()">
+
+    <div>
+        <strong><label for="nombre">Nombre: </label></strong>
+        <br>
+        <input type="text" name="nombre" id ="nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]"
+               title="No debe incluir numeros" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label for="primerApellido">Primer Apellido: </label></strong>
+        <br>
+        <input type="text" name="primerApellido" id="primerApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]"
+               title="No debe incluir numeros" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label for="SegundoApellido">Segundo Apellido: </label></strong>
+        <br>
+        <input type="text" name="SegundoApellido" id="SegundoApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]"
+               title="No debe incluir numeros" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label for="cedula">Cedula: </label></strong>
+        <br>
+        <input type="text" name="cedula" id="cedula" pattern="[0-9]" title="Debe incluir solo numeros" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label for="email">Email</label></strong>
+        <br>
+        <input type="email" name="email" id="email" pattern="^([a-zA-Z0-9_-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([a-zA-Z0-9-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label for="edad">Edad: </label></strong>
+        <br>
+        <input type="number" name="edad" id="edad" min="18" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label for="bday">Fecha de cumpleaños</label></strong>
+        <br>
+        <input type="date" name="cumpleaños" id="bday"><br>
+    </div>
+    <br>
+    <div>
+        <strong><label>Genero: </label></strong>
+        <br>
+        <form>
+            <select name="genero">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </form>
+    </div>
+    <br>
+    <div>
+        <strong><label>Numero de Telefono: </label></strong>
+        <br>
+        <input type="tel" name="telefono" pattern="[0-9]" title="Debe incluir solo numeros" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label>Direccion: </label></strong>
+        <br>
+        <input type="text" name="direccion" required><br>
+    </div>
+    <br>
+    <div>
+        <strong><label>Pais de residencia: </label></strong>
+        <br>
+        <select name="pais">
+            <optgroup label="América">
+            <option value="1">Argentina</option>
+            <option value="2">Espania</option>
+            <option value="3">Mexico</option>
+            <option value="4">Guatemala</option>
+            <option value="5">Honduras</option>
+            <option value="7">El Salvador</option>
+            <option value="8">Venezuela</option>
+            <option value="9">Colombia</option>
+            <option value="10">Cuba</option>
+            <option value="11">Bolivia</option>
+            <option value="13">Perú</option>
+            <option value="14">Ecuador</option>
+            <option value="15">Paraguay</option>
+            <option value="16">Uruguay</option>
+            <option value="17">Chile</option>
+            </optgroup>
+        </select><br>
+    </div>
+    <br>
+    <div>
+        <strong><label>Codigo Postal: </label></strong>
+        <br>
+        <input type="text" name="codigoP" pattern="[0-9]" title="Debe incluir solo numeros" required><br>
+    </div>
+
+    <br>
+    <br>
+
+    <button type="button" onclick="alert('Te has registrado con exito')">Registrarme!</button>
 </form>
