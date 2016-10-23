@@ -4,6 +4,7 @@ import com.eci.cosw.model.Mensajero;
 
 import java.util.List;
 
+
 public interface MensajeroStub {
 
     public List<Mensajero> getMensajeros();
