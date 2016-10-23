@@ -1,6 +1,7 @@
 package com.eci.cosw.stub;
 
 import com.eci.cosw.model.Producto;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * Created by Juan Sebastian Martinez Serna on 3/10/16.
  */
+@Service
 public class ProductStubImpl implements ProductStub {
 
     private List<Producto> productos = new ArrayList<>();
