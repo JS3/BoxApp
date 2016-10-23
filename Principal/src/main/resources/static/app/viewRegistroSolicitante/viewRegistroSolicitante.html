@@ -3,16 +3,8 @@
     Showing of 'interpolate' filter:
     {{ 'Current version is v%VERSION%.' | interpolate }}
 
-<script>
-    function revisar() {
-    if(formulario.nombre == "") { alert('Debes poner el nombre') ; return false ; }
-    if(formulario.primerApellido == "") { alert('Debes poner el país') ; return false ; }
-    if(formulario.SegundoApellido == "") { alert('Debes poner el email') ; return false ; }
-    }
-</script>
 
-
-<form name="formulario" method="post" onsubmit="return revisar()">
+<form name="formulario">
 
     <div>
         <strong><label for="nombre">Nombre: </label></strong>
