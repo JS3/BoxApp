@@ -1,0 +1,61 @@
+<div ng-show="authenticated">
+
+    <center>
+        <h1 style="color:red;">Producto</h1>
+        <h3 style="color:red!5">registro</h3>
+    </center>
+    <form>
+        <table>
+            <tr>
+                <th>
+                    <label id = "idNombreProductoLabel" name = "lbNombreProducto"
+                           class = "labelProducto" > Nombre del producto: </label>
+                </th>
+                <th>
+                    <input id = "idNombreProductoInput" name = "inNombreProducto" class = "InputProducto" value = ""
+                           placeholder = "Nombre del Producto" pattern="[a-zA-Z0-9._+-]{5,}" type = "text"
+                           title = "El nombre debe de tener una logitud mayor o igual a 5">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label id = "idDescripcionProductoLabel" name = "lbDescripcionProducto"
+                           class = "labelProducto" > Descripcion del producto: </label>
+                </th>
+                <th>
+                    <input id = "idDescripcionProductoInput" name = "inDescripcionProducto" class = "InputProducto" value = ""
+                           placeholder = "Descripcion del Producto" pattern="[a-zA-Z0-9._+- ]+" type = "text">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label id = "idPesoProductoLabel" name = "lbPesoProducto"
+                           class = "labelProducto" > Peso del producto (libras): </label>
+                </th>
+                <th>
+                    <input id = "idPesoProductoInput" name = "inPesoProducto" class = "InputProducto" value = ""
+                           placeholder = "Peso del Producto en libras" pattern="[0-9.]" type = "number" step = ".1"
+                           min = "0.1" max = "100">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label id = "idDelicadoProductoLabel" name = "lbDelicadoProducto"
+                           class = "labelProducto" > Delicado: </label>
+                </th>
+                <th>
+                    <input id = "idDelicadoProductoCheckbox" name = "cbDelicadoProducto"
+                            class = "CheckboxProducto" type="checkbox">
+                </th>
+            </tr>
+        </table>
+
+        <input type="submit" value="Aceptar">
+    </form>
+
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>
