@@ -31,7 +31,6 @@ public class Lab2Application {
         SpringApplication.run(Lab2Application.class, args);
     }
 
-
     @Configuration
     @EnableGlobalMethodSecurity(prePostEnabled = true)
     @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
@@ -60,7 +59,7 @@ public class Lab2Application {
             return new OncePerRequestFilter() {
                 @Override
                 protected void doFilterInternal(HttpServletRequest request,
-                                                HttpServletResponse response, FilterChain filterChain)
+                        HttpServletResponse response, FilterChain filterChain)
                         throws ServletException, IOException {
                     CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class
                             .getName());
