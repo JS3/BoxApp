@@ -9,43 +9,45 @@
             <tr>
                 <th>
                     <label id = "idNombreProductoLabel" name = "lbNombreProducto"
-                           class = "labelProducto" > Nombre del producto: </label>
+                           class = "labelProducto" style="color:red;"> Nombre del producto: </label>
                 </th>
                 <th>
-                    <input id = "idNombreProductoInput" name = "inNombreProducto" class = "InputProducto" value = ""
+                    <input id = "idNombreProductoInput" name = "inNombreProducto" class = "InputProducto"
                            placeholder = "Nombre del Producto" pattern="[a-zA-Z0-9._+-]{5,}" type = "text"
+                           ng-model = "nombreProducto" style="color:red;"
                            title = "El nombre debe de tener una logitud mayor o igual a 5">
                 </th>
             </tr>
             <tr>
                 <th>
                     <label id = "idDescripcionProductoLabel" name = "lbDescripcionProducto"
-                           class = "labelProducto" > Descripcion del producto: </label>
+                           class = "labelProducto" style="color:red;"> Descripcion del producto: </label>
                 </th>
                 <th>
-                    <input id = "idDescripcionProductoInput" name = "inDescripcionProducto" class = "InputProducto" value = ""
-                           placeholder = "Descripcion del Producto" pattern="[a-zA-Z0-9._+- ]+" type = "text">
+                    <input id = "idDescripcionProductoInput" name = "inDescripcionProducto" class = "InputProducto"
+                           ng-model = "descripcionProducto" placeholder = "Descripcion del Producto"
+                           pattern="[a-zA-Z0-9._+- ]+" type = "text" style="color:red;">
                 </th>
             </tr>
             <tr>
                 <th>
-                    <label id = "idPesoProductoLabel" name = "lbPesoProducto"
+                    <label id = "idPesoProductoLabel" name = "lbPesoProducto" style="color:red;"
                            class = "labelProducto" > Peso del producto (libras): </label>
                 </th>
                 <th>
-                    <input id = "idPesoProductoInput" name = "inPesoProducto" class = "InputProducto" value = ""
-                           placeholder = "Peso del Producto en libras" pattern="[0-9.]" type = "number" step = ".1"
-                           min = "0.1" max = "100">
+                    <input id = "idPesoProductoInput" name = "inPesoProducto" class = "InputProducto"
+                           placeholder = "Peso del Producto en libras" type = "number" step = ".1"
+                           min = "0.1" max = "100" ng-model = "pesoLibrasProducto" style="color:red;">
                 </th>
             </tr>
             <tr>
                 <th>
                     <label id = "idDelicadoProductoLabel" name = "lbDelicadoProducto"
-                           class = "labelProducto" > Delicado: </label>
+                           class = "labelProducto" style="color:red;"> Delicado: </label>
                 </th>
                 <th>
-                    <input id = "idDelicadoProductoCheckbox" name = "cbDelicadoProducto"
-                            class = "CheckboxProducto" type="checkbox">
+                    <input id = "idDelicadoProductoCheckbox" name = "cbDelicadoProducto" style="color:red;"
+                            class = "CheckboxProducto" type="checkbox" ng-model = "delicadoProducto">
                 </th>
             </tr>
         </table>
