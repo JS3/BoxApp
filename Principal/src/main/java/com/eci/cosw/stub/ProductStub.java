@@ -11,20 +11,20 @@ public interface ProductStub {
 
     /**
      * Retorna la una lista con todos los productos existentes
-     * @return Lista con todos los producto existentes
+     * @return Lista con todos los productos existentes
      */
     public List<Producto> getProductos();
 
     /**
-     * Busca y retorna un producto seleccionado por el Id
-     * @param idProducto id del producto
+     * Busca y retorna un productos seleccionado por el Id
+     * @param idProducto id del productos
      * @return Producto que tiene el id especificado
      */
     public Producto getProductoById(Integer idProducto);
 
     /**
      * Busca y retorna los productos que tengan el nombre especificado
-     * @param nombre nombre del/los producto(s)
+     * @param nombre nombre del/los productos(s)
      * @return Lista de productos que tiene el nombre especificado
      */
     public List<Producto> getProductosByName(String nombre);
@@ -104,8 +104,8 @@ public interface ProductStub {
     public List<Producto> getProductosEntregadosPaisDestino(String pais);
 
     /**
-     * Agrega un nuevo producto
-     * @param producto producto a agregar
+     * Agrega un nuevo productos
+     * @param producto productos a agregar
      */
     public void addProducto(Producto producto);
 }
