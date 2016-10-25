@@ -11,11 +11,15 @@ angular.module('myApp.productos', ['ngRoute'])
 
     .controller('ProductosCtrl', ['$scope', function ($scope) {
 
-        $scope.nombreProducto      = "";
-        $scope.descripcionProducto = "";
-        $scope.pesoLibrasProducto  = "0";
-        $scope.delicadoProducto    = "";
+        $scope.nombreProducto        = "";
+        $scope.descripcionProducto   = "";
+        $scope.pesoLibrasProducto    = "";
+        $scope.delicadoProducto      = "";
+        $scope.paisOrigenProducto    = "";
+        $scope.paisDestinoProducto   = "";
+        $scope.ciudadOrigenProducto  = "";
+        $scope.ciudadDestinoProducto = "";
 
-
+        
 
     }]);
