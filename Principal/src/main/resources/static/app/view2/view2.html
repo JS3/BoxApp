@@ -1,15 +1,18 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
-
+<div>
+    <p>.</p>
+    
+</div>
 
  <div  ng-show="authenticated">
     Descripcion : <input ng-model = "description">
     Prioridad : <input  ng-model = "priority" type="number" min="1" max="10" > <br>
     <button ng-click="agregarFabrica()"> SEND </button>
-</div>                    
+</div> 
+
+
+<div>
+    
+</div>
  <div  ng-show="!authenticated">
     <h1> Usted no esta autenticado</h1>
 </div>                    

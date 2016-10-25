@@ -17,26 +17,36 @@
         <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
         <link rel="stylesheet" href="app.css">
         <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/main.css" />
         <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
     </head>
     <body>
-        <ul class="menu" ng-controller="myApp.principal">
-            <li ng-show="!authenticated"><a href="#/viewLogin">Login</a></li>
-            <li><a href="#/view1">Main</a></li>
-            <li ng-show="authenticated"><a href="#/view2">Add task</a></li>
-            <li ng-show="authenticated"><a href="#/view3">view task</a></li>
-            <li ng-show="authenticated"><a href="#/viaje">add travel</a></li>
-            <li ng-show="authenticated"><a href="#/misviajes">view travel</a></li>
-            <li ng-show="authenticated"><a href="#/viewRegistroSolicitante">Registro Solicitante</a></li>
-            <li ng-show="authenticated"><a ng-click="logout()">Logout</a></li>
-        </ul>
+        <div id="wrapper">
+            <header id="header" class="alt">
+		<span class="logo"><img src="images/logo.svg" alt="" /></span>
+		<h1>BoxApp</h1>
+		<p>App for send and receive products from other countries <br />
+		
+            </header>
+            <nav id="nav">
+                <ul class="menu" ng-controller="myApp.principal">
+                    <li ng-show="!authenticated"><a href="#/viewLogin">Login</a></li>
+                    <li><a href="#/view1">Main</a></li>
+                    <li ng-show="authenticated"><a href="#/view2">Add task</a></li>
+                    <li ng-show="authenticated"><a href="#/view3">view task</a></li>
+                    <li ng-show="authenticated"><a href="#/viaje">add travel</a></li>
+                    <li ng-show="authenticated"><a href="#/misviajes">view travel</a></li>
+                    <li ng-show="authenticated"><a href="#/viewRegistroSolicitante">Registro Solicitante</a></li>
+                    <li ng-show="authenticated"><a ng-click="logout()">Logout</a></li>
+                </ul>
+            </nav>
 
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
             your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        </div>
         <div ng-view></div>
 
         <div>Angular seed app: v<span app-version></span></div>
@@ -71,5 +81,12 @@
         <script src="components/version/version.js"></script>
         <script src="components/version/version-directive.js"></script>
         <script src="components/version/interpolate-filter.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
     </body>
 </html>
