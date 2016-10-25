@@ -31,8 +31,8 @@ public class ProductoController {
     }
 
     /**
-     * Busca un productos especificado por el id y lo retorna
-     * @param idProducto id del productos a buscar
+     * Busca un producto especificado por el id y lo retorna
+     * @param idProducto id del producto a buscar
      * @return Prodcuto especificado
      */
     @RequestMapping(value = "/{idProducto}", method = RequestMethod.GET)
