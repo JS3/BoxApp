@@ -1,51 +1,55 @@
-<p>This is the partial for view Login.</p>
-<p>
-    Showing of 'interpolate' filter:
-    {{ 'Current version is v%VERSION%.' | interpolate }}
+<div>
+    <p>registro de solicitante</p>
 
-<form>
-    Nombre:<br>
-    <input type="text" name="nombre"><br>
-    Primer Apellido:<br>
-    <input type="text" name="primerApellido"><br>
-    Segundo Apellido:<br>
-    <input type="text" name="SegundoApellido"><br>
-    Cedula:<br>
-    <input type="text" name="cedula"><br>
-    Email:<br>
-    <input type="email" name="email"><br>
-    Edad:<br>
-    <input type="number" name="edad" min="18" ><br>
-    Fecha de Nacimiento: <br>
-    <input type="date" name="cumpleaÃ±os"><br>
-    Seleccione su genero: <br>
+</div>
+<div ng-show="authenticated">
     <form>
-        <input type="radio" name="generoM" value="male" checked> Hombre<br>
-        <input type="radio" name="generoF" value="female"> Mujer<br>
-        <input type="radio" name="generoO" value="other"> Otro<br>
+        Nombre:<br>
+        <input type="text" name="nombre"><br>
+        Primer Apellido:<br>
+        <input type="text" name="primerApellido"><br>
+        Segundo Apellido:<br>
+        <input type="text" name="SegundoApellido"><br>
+        Cedula:<br>
+        <input type="text" name="cedula"><br>
+        Email:<br>
+        <input type="email" name="email"><br>
+        Edad:<br>
+        <input type="number" name="edad" min="18" ><br>
+        Fecha de Nacimiento: <br>
+        <input type="date" name="cumpleaÃ±os"><br>
+        Seleccione su genero: <br>
+        <radio>
+            <input type="radio" name="generoM" value="male" checked> Hombre<br>
+            <input type="radio" name="generoF" value="female"> Mujer<br>
+            <input type="radio" name="generoO" value="other"> Otro<br>
+        </radio>
+        Telefono: <br>
+        <input type="tel" name="telefono"><br>
+        Direccion: <br>
+        <input type="text" name="direccion"><br>
+        Pais: <br>
+        <select name="pais">
+            <option value="1">Argentina</option>
+            <option value="2">España</option>
+            <option value="3">México</option>
+            <option value="4">Guatemala</option>
+            <option value="5">Honduras</option>
+            <option value="7">El Salvador</option>
+            <option value="8">Venezuela</option>
+            <option value="9">Colombia</option>
+            <option value="10">Cuba</option>
+            <option value="11">Bolivia</option>
+            <option value="13">Perú</option>
+            <option value="14">Ecuador</option>
+            <option value="15">Paraguay</option>
+            <option value="16">Uruguay</option>
+            <option value="17">Chile</option>
+        </select><br>
+        Codigo postal: <br>
+        <input type="text" name="codigoP"><br>
     </form>
-    Telefono: <br>
-    <input type="tel" name="telefono"><br>
-    Direccion: <br>
-    <input type="text" name="direccion"><br>
-    Pais: <br>
-    <select name="pais">
-        <option value="1">Argentina</option>
-        <option value="2">EspaÃ±a</option>
-        <option value="3">MÃ©xico</option>
-        <option value="4">Guatemala</option>
-        <option value="5">Honduras</option>
-        <option value="7">El Salvador</option>
-        <option value="8">Venezuela</option>
-        <option value="9">Colombia</option>
-        <option value="10">Cuba</option>
-        <option value="11">Bolivia</option>
-        <option value="13">PerÃº</option>
-        <option value="14">Ecuador</option>
-        <option value="15">Paraguay</option>
-        <option value="16">Uruguay</option>
-        <option value="17">Chile</option>
-    </select><br>
-    Codigo postal: <br>
-    <input type="text" name="codigoP"><br>
-</form>
+</div>
+<div ng-show="!authenticated">
+    <h1> Usted no esta autenticado</h1>
+</div>  
