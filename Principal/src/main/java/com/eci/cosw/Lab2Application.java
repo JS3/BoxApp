@@ -23,8 +23,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
+//@EnableJpaRepositories("com.eci.cosw.repositories")
+@EntityScan("com.eci.cosw.model")
 public class Lab2Application {
 
     public static void main(String[] args) {
