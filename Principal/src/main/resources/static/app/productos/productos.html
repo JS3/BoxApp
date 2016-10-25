@@ -1,0 +1,120 @@
+<div ng-show="authenticated">
+
+    <center>
+        <h1 style="color:red;">Producto</h1>
+        <h3 style="color:red!5">registro</h3>
+    </center>
+    <form>
+        <table>
+
+            <tr>
+                <th>
+                    <label id = "idNombreProductoLabel" name = "lbNombreProducto"
+                           class = "labelProducto" style="color:red;"> Nombre del producto: </label>
+                </th>
+                <th>
+                    <input id = "idNombreProductoInput" name = "inNombreProducto" class = "InputProducto"
+                           placeholder = "Nombre del Producto" pattern="[a-zA-Z0-9._+-]{5,}" type = "text"
+                           ng-model = "nombreProducto" style="color:red;" required
+                           title = "El nombre debe de tener una logitud mayor o igual a 5">
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idDescripcionProductoLabel" name = "lbDescripcionProducto"
+                           class = "labelProducto" style="color:red;"> Descripcion del producto: </label>
+                </th>
+                <th>
+                    <input id = "idDescripcionProductoInput" name = "inDescripcionProducto" class = "InputProducto"
+                           ng-model = "descripcionProducto" placeholder = "Descripcion del Producto"
+                           pattern="[a-zA-Z0-9._+- ]+" type = "text" style="color:red;" required>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idPesoProductoLabel" name = "lbPesoProducto" style="color:red;"
+                           class = "labelProducto" required> Peso del producto (libras): </label>
+                </th>
+                <th>
+                    <input id = "idPesoProductoInput" name = "inPesoProducto" class = "InputProducto"
+                           placeholder = "Peso del Producto en libras" type = "number" step = ".1"
+                           min = "0.1" max = "100" ng-model = "pesoLibrasProducto" style="color:red;" required>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idDelicadoProductoLabel" name = "lbDelicadoProducto"
+                           class = "labelProducto" style="color:red;"> Delicado: </label>
+                </th>
+                <th>
+                    <input id = "idDelicadoProductoCheckbox" name = "cbDelicadoProducto" style="color:red;"
+                            class = "CheckboxProducto" type="checkbox" ng-model = "delicadoProducto" required>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idPaisOrigenProductoLabel" name = "lbPaisOrigenProducto"
+                           class = "labelProducto" style="color:red;"> Pais de origen del producto: </label>
+                </th>
+                <th>
+                    <input id = "idPaisOrigenProductoInput" name = "inPaisOrigenProducto" class = "InputProducto"
+                           placeholder = "Pais de origen del Producto" pattern="[a-zA-Z0-9._+-]{5,}" type = "text"
+                           ng-model = "paisOrigenProducto" required
+                           title = "El nombre del pais debe de tener una logitud mayor o igual a 5">
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idCiudadOrigenProductoLabel" name = "lbCiudadOrigenProducto"
+                           class = "labelProducto" style="color:red;"> Ciudad de origen del producto: </label>
+                </th>
+                <th>
+                    <input id = "idCiudadOrigenProductoInput" name = "inCiudadOrigenProducto" class = "InputProducto"
+                           placeholder = "Ciudad de origen del Producto" pattern="[a-zA-Z0-9._+-]{3,}" type = "text"
+                           ng-model = "ciudadOrigenProducto" required
+                           title = "El nombre de la ciudad debe de tener una logitud mayor o igual a 3">
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idPaisDestinoProductoLabel" name = "lbPaisDestinoProducto"
+                           class = "labelProducto" style="color:red;"> Pais de destino del producto: </label>
+                </th>
+                <th>
+                    <input id = "idPaisDestinoProductoInput" name = "inPaisDestinoProducto" class = "InputProducto"
+                           placeholder = "Pais de destino del Producto" pattern="[a-zA-Z0-9._+-]{5,}" type = "text"
+                           ng-model = "paisDestinoProducto" required
+                           title = "El nombre del pais debe de tener una logitud mayor o igual a 5">
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <label id = "idCiudadDestinoProductoLabel" name = "lbCiudadDestinoProducto"
+                           class = "labelProducto" style="color:red;"> Ciudad de destino del producto: </label>
+                </th>
+                <th>
+                    <input id = "idCiudadDestinoProductoInput" name = "inCiudadDestinoProducto" class = "InputProducto"
+                           placeholder = "Ciudad de destino del Producto" pattern="[a-zA-Z0-9._+-]{3,}" type = "text"
+                           ng-model = "ciudadDestinoProducto" required
+                           title = "El nombre de la ciudad debe de tener una logitud mayor o igual a 3">
+                </th>
+            </tr>
+
+        </table>
+
+        <input type="submit" value="Aceptar">
+    </form>
+
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>
