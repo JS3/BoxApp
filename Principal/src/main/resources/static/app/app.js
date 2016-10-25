@@ -15,7 +15,7 @@ angular.module('myApp', [
     'myApp.version'
 ]).
         config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
-                $routeProvider.otherwise({redirectTo: '/viewLogin'});
+                $routeProvider.otherwise({redirectTo: '/view1'});
                 $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
             }])
@@ -25,7 +25,7 @@ angular.module('myApp', [
                 $scope.logout = function () {
                     $http.post('/logout', {}).success(function () {
                         $rootScope.authenticated = false;
-                        $location.path("/viewLogin");
+                        $location.path("/view1");
                     }).error(function (data) {
                         $rootScope.authenticated = false;
                     });
