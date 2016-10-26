@@ -1,29 +1,32 @@
 package com.eci.cosw.stub;
 
-import com.eci.cosw.utils.Hashing;
+import com.eci.cosw.model.*;
+import com.eci.cosw.utils.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Julian Gonzalez Prieto (Avuuna, la Luz del Alba) on 27/09/2016.
  */
 public class UsersStubImpl implements UsersStub {
-    private static Map<String, String> users;
+
+    private static List<Usuario> users;
 
     static {
-        users = new HashMap<String, String>();
+        users = new ArrayList();
+        String rolUser = "USER";
 
         // Usuarios y contrasenas - quemado en codigo
-        users.put("julian", Hashing.sha1("avuuna"));
-        users.put("diana", Hashing.sha1("diana"));
-        users.put("juan", Hashing.sha1("juan"));
-        users.put("ramiro", Hashing.sha1("ramiro"));
-        users.put("jose", Hashing.sha1("jose"));
+        users.add(new Usuario("user", Hashing.sha1("password"), rolUser));
+        users.add(new Usuario("julian", Hashing.sha1("avuuna"), rolUser));
+        users.add(new Usuario("diana", Hashing.sha1("diana"), rolUser));
+        users.add(new Usuario("juan", Hashing.sha1("juan"), rolUser));
+        users.add(new Usuario("jose", Hashing.sha1("jose"), rolUser));
+        users.add(new Usuario("ramiro", Hashing.sha1("ramiro"), rolUser));
     }
 
     @Override
-    public Map<String, String> getUsers() {
+    public List<Usuario> getUsers() {
         return users;
     }
 }

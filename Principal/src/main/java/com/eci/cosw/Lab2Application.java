@@ -1,5 +1,6 @@
 package com.eci.cosw;
 
+import com.eci.cosw.model.*;
 import com.eci.cosw.stub.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -44,12 +45,11 @@ public class Lab2Application {
         @Override
         protected void configure(AuthenticationManagerBuilder builder) throws Exception {
             UsersStub usersStub = new UsersStubImpl();
-            Map<String, String> users = usersStub.getUsers();
-            builder.inMemoryAuthentication().withUser("julian").password(users.get("julian")).roles("USER");
-            builder.inMemoryAuthentication().withUser("diana").password("diana").roles("USER");
-            builder.inMemoryAuthentication().withUser("juan").password("juan").roles("USER");
-            builder.inMemoryAuthentication().withUser("jose").password("jose").roles("USER");
-            builder.inMemoryAuthentication().withUser("ramiro").password("ramiro").roles("USER");
+            List<Usuario> users = usersStub.getUsers();
+
+            for (Usuario user : users) {
+                builder.inMemoryAuthentication().withUser(user.getUser()).password(user.getPassword()).roles(user.getRol());
+            }
         }
 
         @Override
