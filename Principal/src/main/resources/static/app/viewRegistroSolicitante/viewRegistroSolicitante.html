@@ -14,21 +14,21 @@
         <div>
             <strong><label for="primerApellido">Primer Apellido: </label></strong>
             <br>
-            <input ng-model = "primerApellidors" type="text" name="primerApellido" id="primerApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]"
+            <input ng-model = "primerApellidors" type="text" name="primerApellido" id="primerApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+"
                    title="No debe incluir numeros" required><br>
         </div>
         <br>
         <div>
             <strong><label for="SegundoApellido">Segundo Apellido: </label></strong>
             <br>
-            <input ng-model = "segundoApellidors" type="text" name="SegundoApellido" id="SegundoApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]"
+            <input ng-model = "segundoApellidors" type="text" name="SegundoApellido" id="SegundoApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+"
                    title="No debe incluir numeros" required><br>
         </div>
         <br>
         <div>
             <strong><label for="cedula">Cedula: </label></strong>
             <br>
-            <input ng-model = "cedulars" type="text" name="cedula" id="cedula" pattern="[0-9]" title="Debe incluir solo numeros" required><br>
+            <input ng-model = "cedulars" type="text" name="cedula" id="cedula" pattern="[0-9]+" title="Debe incluir solo numeros" required><br>
         </div>
         <br>
         <div>
@@ -58,7 +58,7 @@
         <div>
             <strong><label>Numero de Telefono: </label></strong>
             <br>
-            <input ng-model = "telefonors" type="tel" name="telefono" pattern="[0-9]" title="Debe incluir solo numeros" required><br>
+            <input ng-model = "telefonors" type="tel" name="telefono" pattern="[0-9]+" title="Debe incluir solo numeros" required><br>
         </div>
         <br>
         <div>
@@ -94,7 +94,7 @@
         <div>
             <strong><label>Codigo Postal: </label></strong>
             <br>
-            <input ng-model = "codigoPostalrs" type="text" name="codigoP" pattern="[0-9]" title="Debe incluir solo numeros" required><br>
+            <input ng-model = "codigoPostalrs" type="text" name="codigoP" pattern="[0-9]+" title="Debe incluir solo numeros" required><br>
         </div>
         <br>
         <div>
@@ -105,6 +105,6 @@
         <br>
         <br>
 
-        <button type="button" ng-click="addSolicitante()">Registrarme!</button>
+        <input type="submit" ng-click="addSolicitante()" value="Registrarme!">
     </form>
 </div>
