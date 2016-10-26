@@ -9,22 +9,44 @@ angular.module('myApp.viewRegistroSolicitante', ['ngRoute'])
                 });
             }])
 
-        .controller('ViewRegistroSolicitanteCtrl', ['$scope', 'solicitante', function ($scope, solicitante) {
+        .controller('ViewRegistroSolicitanteCtrl', ['$scope', function ($scope) {
 
-                $scope.nombre = "";
-                $scope.primerApellido = "";
-                $scope.segundoApellido = "";
-                $scope.cedula;
-                $scope.genero;
-                $scope.email = "";
-                $scope.edad;
-                $scope.fechaNacimiento;
-                $scope.telefono;
-                $scope.direccion = "";
-                $scope.pais = "";
-                $scope.municipio = "";
-                $scope.codigoPostal;
+                $scope.nombrers = "";
+                $scope.primerApellidors = "";
+                $scope.segundoApellidors = "";
+                $scope.cedulars;
+                $scope.generors;
+                $scope.edadrs;
+                $scope.fechaNacimientors;
+                $scope.telefonors;
+                $scope.direccionrs = "";
+                $scope.paisrs = "";
+                $scope.municipiors = "";
+                $scope.codigoPostalrs;
 
+                $scope.addSolicitante = function() {
 
+                     var newSolicitante={"nombre":$scope.nombrers,"primerApellido":$scope.primerApellidors,
+                                         "segundoApellido":$scope.segundoApellidors, "genero":$scope.generors,
+                                         "cedula":$scope.cedulars, "edad":$scope.edadrs, "fechaNacimiento":$scope.fechaNacimientors,
+                                         "telefono":$scope.telefonors, "direccion":$scope.direccionrs, "pais":$scope.paisrs,
+                                         "municipio":$scope.municipiors, "codigoPostal": $scope.codigoPostalrs};
 
-            }]);
+//                    solicitante.save(newSolicitante, function(){
+                        console.info("Se ha registrado: "+ newSolicitante);
+//                    });
+
+                    $scope.nombrers = "";
+                    $scope.primerApellidors = "";
+                    $scope.segundoApellidors = "";
+                    $scope.cedulars;
+                    $scope.generors;
+                    $scope.edadrs;
+                    $scope.fechaNacimientors;
+                    $scope.telefonors;
+                    $scope.direccionrs = "";
+                    $scope.paisrs = "";
+                    $scope.municipiors = "";
+                    $scope.codigoPostalrs;
+                }
+        }]);
