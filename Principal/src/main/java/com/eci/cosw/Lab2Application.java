@@ -1,5 +1,6 @@
 package com.eci.cosw;
 
+import com.eci.cosw.stub.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -23,6 +24,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
@@ -41,7 +43,13 @@ public class Lab2Application {
 
         @Override
         protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-            builder.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+            UsersStub usersStub = new UsersStubImpl();
+            Map<String, String> users = usersStub.getUsers();
+            builder.inMemoryAuthentication().withUser("julian").password(users.get("julian")).roles("USER");
+            builder.inMemoryAuthentication().withUser("diana").password("diana").roles("USER");
+            builder.inMemoryAuthentication().withUser("juan").password("juan").roles("USER");
+            builder.inMemoryAuthentication().withUser("jose").password("jose").roles("USER");
+            builder.inMemoryAuthentication().withUser("ramiro").password("ramiro").roles("USER");
         }
 
         @Override
