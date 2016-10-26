@@ -6,7 +6,8 @@
 
 <div  ng-show="authenticated">
     Razón : <input ng-model = "razon"> <br>
-    <button ng-click="agregarMensajero()"> Incribirse </button>
+    <p ng-model="mensaje" ng-repeat="x in solicitante">{{x.nombre}}{{mensaje}}   <br>
+    <button ng-click="agregarSolicitante(); agregarMensajero(x)" > Incribirse </button> 
 </div>                    
 <div  ng-show="!authenticated">
     <h1> Usted no esta autenticado</h1>

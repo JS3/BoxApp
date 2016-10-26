@@ -5,19 +5,18 @@
  */
 package com.eci.cosw.stub;
 
-import com.eci.cosw.model.Mensajero;
+
 import com.eci.cosw.model.Solicitante;
 import java.util.List;
 
 /**
- *
- * @author jose
+ * @author Santiago Carrillo
  */
-public interface MensajeroStub {
+public interface SolicitanteStub {
+
+    Solicitante getSolicitante(int idSolicitante);
     
-    Mensajero getMensajero(int idMensajero);
-    
-    List<Mensajero> getListaMensajeros();
-    
-    void addMensajero(Solicitante solicitante);
+    List<Solicitante> getListaSolicitantes();
+
+    void addSolicitante(Solicitante solicitante);
 }

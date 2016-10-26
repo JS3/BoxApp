@@ -38,7 +38,16 @@ public class Solicitante {
         this.municipio = municipio;
         this.codigoPostal = codigoPostal;
     }
-
+    
+    public Solicitante(int idSolicitante, String nombre){        
+        this.idSolicitante = idSolicitante;
+        this.nombre = nombre;
+    }
+    
+    public Solicitante(int idSolicitante){      
+        this.idSolicitante = idSolicitante;
+    }
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

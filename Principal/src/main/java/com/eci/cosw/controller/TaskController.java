@@ -38,6 +38,4 @@ public class TaskController {
     public void postTask(@RequestBody Task task) {
         taskStub.addTask(task);
     }
-
-
 }

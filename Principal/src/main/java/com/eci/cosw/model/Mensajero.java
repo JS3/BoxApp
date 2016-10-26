@@ -12,12 +12,18 @@ public class Mensajero extends Solicitante {
 
     public Mensajero(int idSolicitante, String nombre, String primerApellido, String segundoApellido, int cedula,
                      int edad, Date fechaNacimiento, int telefono, String direccion, String pais, String municipio,
-                     int codigoPostal, int calificacion) {
+                     int codigoPostal) {
 
         super(idSolicitante, nombre, primerApellido, segundoApellido, cedula, edad, fechaNacimiento, telefono,
                 direccion, pais, municipio, codigoPostal);
 
-        this.calificacion = calificacion;
+        this.calificacion = 0;
+    }
+    
+    public Mensajero(int idSolicitante, String nombre){
+        
+        super(idSolicitante, nombre);
+        this.calificacion = 0;
     }
 
     public int getCalificacion() {

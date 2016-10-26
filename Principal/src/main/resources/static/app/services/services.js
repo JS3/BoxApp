@@ -11,9 +11,18 @@ angular.module('services.module1', ['ngRoute','ngResource'])
             },
             addTodo: function (todo) {
                 data.listado.push(todo);
-            }};
+            }
+        };
     })
     .factory('tasks', function($resource) {
             
         return $resource('/task',{},{ get: { method: 'GET', isArray: true} });
+    })
+    .factory('solicitantes', function($resource) {
+            
+        return $resource('/solicitante',{},{ get: { method: 'GET', isArray: true} });
+    })
+    .factory('mensajeros', function($resource) {
+            
+        return $resource('/mensajero',{},{ get: { method: 'GET', isArray: true} });
     });
