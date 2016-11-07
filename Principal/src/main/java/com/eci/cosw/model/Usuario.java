@@ -5,11 +5,17 @@
  */
 package com.eci.cosw.model;
 
+import java.io.*;
+import java.util.*;
+import javax.persistence.*;
+
 /**
  *
  * @author User
  */
-public class Usuario {
+@Entity
+@Table(name = "Usuarios")
+public class Usuario implements Serializable {
 
     private String user, password, rol;
 
@@ -17,6 +23,9 @@ public class Usuario {
         setUser(user);
         setPassword(password);
         setRol(rol);
+    }
+
+    public Usuario() {
     }
 
     public String getRol() {
@@ -27,6 +36,8 @@ public class Usuario {
         this.rol = rol;
     }
 
+    @Id
+    @Column(name = "correo", nullable = false, length = 75)
     public String getUser() {
         return user;
     }
@@ -35,6 +46,7 @@ public class Usuario {
         this.user = user;
     }
 
+    @Column(name = "contrasena", nullable = false, length = 40)
     public String getPassword() {
         return password;
     }
