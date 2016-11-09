@@ -17,23 +17,14 @@ import javax.persistence.*;
 @Table(name = "Usuarios")
 public class Usuario implements Serializable {
 
-    private String user, password, rol;
+    private String user, password;
 
-    public Usuario(String user, String password, String rol) {
+    public Usuario(String user, String password) {
         setUser(user);
         setPassword(password);
-        setRol(rol);
     }
 
     public Usuario() {
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
     }
 
     @Id

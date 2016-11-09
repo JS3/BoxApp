@@ -46,9 +46,10 @@ public class Lab2Application {
         protected void configure(AuthenticationManagerBuilder builder) throws Exception {
             UsersStub usersStub = new UsersStubImpl();
             List<Usuario> users = usersStub.getUsers();
+            String rolUser = "USER";
 
             for (Usuario user : users) {
-                builder.inMemoryAuthentication().withUser(user.getUser()).password(user.getPassword()).roles(user.getRol());
+                builder.inMemoryAuthentication().withUser(user.getUser()).password(user.getPassword()).roles(rolUser);
             }
         }
 
