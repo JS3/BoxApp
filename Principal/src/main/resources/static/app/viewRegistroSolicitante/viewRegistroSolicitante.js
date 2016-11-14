@@ -40,6 +40,7 @@ angular.module('myApp.viewRegistroSolicitante', ['ngRoute'])
 
                     solicitante.save(newSolicitante, function(){
                         console.info("Se ha registrado: "+ newSolicitante);
+                        alert("Te has registrado con éxito: " + newSolicitante.nombre + ", BoxApp te da la bienvenida");
                     });
 
                 $scope.nombrers = "";

@@ -24,9 +24,9 @@ public class Producto {
     private GregorianCalendar fechaRegistro;
     private GregorianCalendar fechaEntrega;
 
-    public Producto(String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado) {
+    public Producto(String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado) {
 //        this.idProducto = idProducto;
-        this.ubicacion = ubicacion;
+        this.ubicacion = Producto.ORIGEN;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.paisOrigen = paisOrigen;

@@ -24,7 +24,7 @@ angular.module('myApp.productos', ['ngRoute'])
 
             var newProducto =
                 {   nombre        : $scope.nombreProducto,
-                    ubicacion     : "ORIGEN",
+                    //ubicacion     : "ORIGEN",
                     descripcion   : $scope.descripcionProducto,
                     delicado      : $scope.delicadoProducto,
                     paisOrigen    : $scope.paisOrigenProducto,
