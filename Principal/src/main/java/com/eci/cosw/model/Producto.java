@@ -10,7 +10,7 @@ public class Producto {
     public final static String ORIGEN  = "ORIGEN";
     public final static String DESTINO = "DESTINO";
 
-    private Integer idProducto; // Autogenerado
+    private Integer idProducto = 0; // Autogenerado
     private String ubicacion; // "ORIGEN" o "DESTINO"
     private String nombre;
     private String descripcion;
@@ -24,7 +24,7 @@ public class Producto {
     private GregorianCalendar fechaRegistro;
     private GregorianCalendar fechaEntrega;
 
-    public Producto(String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
+    public Producto(String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado) {
 //        this.idProducto = idProducto;
         this.ubicacion = ubicacion;
         this.nombre = nombre;
@@ -35,7 +35,7 @@ public class Producto {
         this.ciudadDestino = ciudadDestino;
         this.peso = peso;
         this.delicado = delicado;
-        this.entregado = entregado;
+        this.entregado = false;
     }
 
     public Integer getIdProducto() {

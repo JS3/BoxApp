@@ -23,19 +23,22 @@ angular.module('myApp.productos', ['ngRoute'])
         $scope.addProducto = function () {
 
             var newProducto =
-                {   "nombre"        : $scope.nombreProducto,
-                    "ubicacion"     : "ORIGEN",
-                    "descripcion"   : $scope.descripcionProducto,
-                    "delicado"      : $scope.delicadoProducto,
-                    "paisOrigen"    : $scope.paisOrigenProducto,
-                    "paisDestino"   : $scope.paisDestinoProducto,
-                    "ciudadOrigen"  : $scope.ciudadOrigenProducto,
-                    "ciudadDestino" : $scope.ciudadDestinoProducto,
-                    "peso"          : $scope.pesoLibrasProducto,
-                    "entregado"     : false
+                {   nombre        : $scope.nombreProducto,
+                    ubicacion     : "ORIGEN",
+                    descripcion   : $scope.descripcionProducto,
+                    delicado      : $scope.delicadoProducto,
+                    paisOrigen    : $scope.paisOrigenProducto,
+                    paisDestino   : $scope.paisDestinoProducto,
+                    ciudadOrigen  : $scope.ciudadOrigenProducto,
+                    ciudadDestino : $scope.ciudadDestinoProducto,
+                    peso          : $scope.pesoLibrasProducto
                 };
 
-            productoPOST.save(newProducto);
+            console.log(newProducto);
+
+            productoPOST.save(newProducto, function(){
+                                    console.info("Se ha registrado: "+ newProducto);
+                                });
 
             alert("Producto registrado: \n"
                 + "Nombre      -> " + newProducto.nombre + "\n"
