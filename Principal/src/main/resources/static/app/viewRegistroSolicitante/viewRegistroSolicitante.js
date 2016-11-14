@@ -26,15 +26,21 @@ angular.module('myApp.viewRegistroSolicitante', ['ngRoute'])
 
             $scope.addSolicitante = function() {
 
-                 var newSolicitante={"nombre":$scope.nombrers,"primerApellido":$scope.primerApellidors,
-                                     "segundoApellido":$scope.segundoApellidors, "genero":$scope.generors,
-                                     "cedula":$scope.cedulars, "edad":$scope.edadrs, "fechaNacimiento":$scope.fechaNacimientors,
-                                     "telefono":$scope.telefonors, "direccion":$scope.direccionrs, "pais":$scope.paisrs,
-                                     "municipio":$scope.municipiors, "codigoPostal": $scope.codigoPostalrs};
+//                 var newSolicitante={"nombre":$scope.nombrers,"primerApellido":$scope.primerApellidors,
+//                                     "segundoApellido":$scope.segundoApellidors, "genero":$scope.generors,
+//                                     "cedula":$scope.cedulars, "edad":$scope.edadrs, "fechaNacimiento":$scope.fechaNacimientors,
+//                                     "telefono":$scope.telefonors, "direccion":$scope.direccionrs, "pais":$scope.paisrs,
+//                                     "municipio":$scope.municipiors, "codigoPostal": $scope.codigoPostalrs};
 
-                    //solicitante.save(newSolicitante, function(){
-                    console.info("Se ha registrado: "+ newSolicitante);
-                    //});
+                   var newSolicitante={nombre:$scope.nombrers,primerApellido:$scope.primerApellidors,
+                                     segundoApellido:$scope.segundoApellidors, genero:$scope.generors,
+                                     cedula:$scope.cedulars, edad:$scope.edadrs, fechaNacimiento:$scope.fechaNacimientors,
+                                     telefono:$scope.telefonors, direccion:$scope.direccionrs, pais:$scope.paisrs,
+                                     municipio:$scope.municipiors, codigoPostal: $scope.codigoPostalrs};
+
+                    solicitante.save(newSolicitante, function(){
+                        console.info("Se ha registrado: "+ newSolicitante);
+                    });
 
                 $scope.nombrers = "";
                 $scope.primerApellidors = "";

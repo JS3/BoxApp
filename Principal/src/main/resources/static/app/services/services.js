@@ -45,16 +45,17 @@ angular.module('services.module1', ['ngRoute','ngResource'])
                         isArray: true
                     }
                 });
-    });
-//    .factory ('solicitante', funtion($resource){
-//        return $resource('/solicitante');
-//    });
+    })
 
-    //    .factory ('solicitanteGet', funtion($resource){
-    //        return $resource('/solicitante', {}, {
-    //        get: {
-    //            method: 'GET',
-    //            isArray: true
-    //        }
-    //        });
-    //    });
+    .factory ('solicitante', function($resource){
+        return $resource('/solicitante');
+    })
+
+    .factory ('solicitanteGet', function($resource){
+      return $resource('/solicitante', {}, {
+                get: {
+                    method: 'GET',
+                    isArray: true
+                }
+            });
+    });

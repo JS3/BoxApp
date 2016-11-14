@@ -3,10 +3,9 @@ package com.eci.cosw.controller;
 import com.eci.cosw.model.Mensajero;
 import com.eci.cosw.stub.MensajeroStub;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,9 +31,22 @@ public class MensajeroController {
         return mensajeroStub.getMensajeroCedula(cedulaMensajero);
     }
 
+//    @RequestMapping(method = RequestMethod.POST)
+//    public void addMensajero(Mensajero mensajero){
+//        mensajeroStub.addMensajeros(mensajero);
+//    }
+
     @RequestMapping(method = RequestMethod.POST)
-    public void addMensajero(Mensajero mensajero){
+    public ResponseEntity<?> addMensajero(@RequestBody Mensajero mensajero){
         mensajeroStub.addMensajeros(mensajero);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+
+//    @RequestMapping(method = RequestMethod.POST)
+//    public ResponseEntity<?> addSolicitante(@RequestBody Solicitante solicitante){
+//        solicitanteStub.addSolicitante(solicitante);
+//        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+//    }
+
 
 }
