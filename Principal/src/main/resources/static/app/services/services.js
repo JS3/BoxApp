@@ -32,6 +32,19 @@ angular.module('services.module1', ['ngRoute','ngResource'])
             
         return $resource('/task',{},{ get: { method: 'GET', isArray: true }
                          });
+    })
+
+    .factory('productoPOST', function($resource) {
+        return $resource('/productos');
+    })
+
+    .factory('productoGET', function($resource) {
+        return $resource('/productos', {}, {
+                    get: {
+                        method: 'GET',
+                        isArray: true
+                    }
+                });
     });
 //    .factory ('solicitante', funtion($resource){
 //        return $resource('/solicitante');

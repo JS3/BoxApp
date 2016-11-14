@@ -3,6 +3,8 @@ package com.eci.cosw.controller;
 import com.eci.cosw.model.Producto;
 import com.eci.cosw.stub.ProductStub;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,7 +47,7 @@ public class ProductoController {
      * @param nombre
      * @return
      */
-    @RequestMapping(value = "/{nombre}", method = RequestMethod.GET)
+    @RequestMapping(value = "/nombre/{nombre}", method = RequestMethod.GET)
     public List<Producto> getProductosByName(@PathVariable("nombre") String nombre) {
         return productStub.getProductosByName(nombre);
     }
@@ -153,7 +155,8 @@ public class ProductoController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void postProducto(@RequestBody Producto producto){
+    public ResponseEntity<?> postProducto(@RequestBody Producto producto){
         productStub.addProducto(producto);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }

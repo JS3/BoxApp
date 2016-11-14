@@ -9,17 +9,47 @@ angular.module('myApp.productos', ['ngRoute'])
         });
     }])
 
-    .controller('ProductosCtrl', ['$scope', function ($scope) {
+    .controller('ProductosCtrl', ['$scope', 'productoPOST', function ($scope, productoPOST) {
 
         $scope.nombreProducto        = "";
         $scope.descripcionProducto   = "";
-        $scope.pesoLibrasProducto    = "";
-        $scope.delicadoProducto      = "";
+        $scope.pesoLibrasProducto    = 0.0;
+        $scope.delicadoProducto      = false;
         $scope.paisOrigenProducto    = "";
         $scope.paisDestinoProducto   = "";
         $scope.ciudadOrigenProducto  = "";
         $scope.ciudadDestinoProducto = "";
 
-        
+        $scope.addProducto = function () {
+
+            var newProducto =
+                {   "nombre"        : $scope.nombreProducto,
+                    "ubicacion"     : "ORIGEN",
+                    "descripcion"   : $scope.descripcionProducto,
+                    "delicado"      : $scope.delicadoProducto,
+                    "paisOrigen"    : $scope.paisOrigenProducto,
+                    "paisDestino"   : $scope.paisDestinoProducto,
+                    "ciudadOrigen"  : $scope.ciudadOrigenProducto,
+                    "ciudadDestino" : $scope.ciudadDestinoProducto,
+                    "peso"          : $scope.pesoLibrasProducto,
+                    "entregado"     : false
+                };
+
+            productoPOST.save(newProducto);
+
+            alert("Producto registrado: \n"
+                + "Nombre      -> " + newProducto.nombre + "\n"
+                + "Descripcion -> " + newProducto.descripcion + "\n");
+
+            $scope.nombreProducto        = "";
+            $scope.descripcionProducto   = "";
+            $scope.pesoLibrasProducto    = 0.0;
+            $scope.delicadoProducto      = false;
+            $scope.paisOrigenProducto    = "";
+            $scope.paisDestinoProducto   = "";
+            $scope.ciudadOrigenProducto  = "";
+            $scope.ciudadDestinoProducto = "";
+
+        }
 
     }]);
