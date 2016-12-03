@@ -62,10 +62,32 @@
                                class = "labelProducto" > Pais de origen del producto: </label>
                     </th>
                     <th>
-                        <input id = "idPaisOrigenProductoInput" name = "inPaisOrigenProducto" class = "InputProducto"
-                               placeholder = "Pais de origen del Producto" pattern="[a-zA-Z]{5,}" type = "text"
-                               ng-model = "paisOrigenProducto" required
-                               title = "El nombre del pais debe de tener una logitud mayor o igual a 5">
+                        <!--<input id = "idPaisOrigenProductoInput" name = "inPaisOrigenProducto" class = "InputProducto"-->
+                               <!--placeholder = "Pais de origen del Producto" pattern="[a-zA-Z]{5,}" type = "text"-->
+                               <!--ng-model = "paisOrigenProducto" required-->
+                               <!--title = "El nombre del pais debe de tener una logitud mayor o igual a 5">-->
+
+                        <select id = "idPaisOrigenProductoInput" name = "inPaisOrigenProducto" class = "InputProducto"
+                                ng-model = "paisOrigenProducto" required >
+                            <optgroup label="América">
+                                <option value="Argentina">Argentina</option>
+                                <option value="Espania">España</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Salvador">El Salvador</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Peru">Perú</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Chile">Chile</option>
+                            </optgroup>
+                        </select>
+
                     </th>
                 </tr>
 
@@ -88,10 +110,31 @@
                                class = "labelProducto" > Pais de destino del producto: </label>
                     </th>
                     <th>
-                        <input id = "idPaisDestinoProductoInput" name = "inPaisDestinoProducto" class = "InputProducto"
-                               placeholder = "Pais de destino del Producto" pattern="[a-zA-Z]{5,}" type = "text"
-                               ng-model = "paisDestinoProducto" required
-                               title = "El nombre del pais debe de tener una logitud mayor o igual a 5">
+                        <select id = "idPaisDestinoProductoInput" name = "inPaisDestinoProducto" class = "InputProducto"
+                                ng-model = "paisDestinoProducto" required >
+                            <optgroup label="América">
+                                <option value="Argentina">Argentina</option>
+                                <option value="Espania">España</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Salvador">El Salvador</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Peru">Perú</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Chile">Chile</option>
+                            </optgroup>
+                        </select>
+
+                        <!--<input id = "idPaisDestinoProductoInput" name = "inPaisDestinoProducto" class = "InputProducto"-->
+                               <!--placeholder = "Pais de destino del Producto" pattern="[a-zA-Z]{5,}" type = "text"-->
+                               <!--ng-model = "paisDestinoProducto" required-->
+                               <!--title = "El nombre del pais debe de tener una logitud mayor o igual a 5">-->
                     </th>
                 </tr>
 

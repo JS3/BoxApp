@@ -19,7 +19,7 @@ public class Producto {
     private Double peso;
     private Boolean delicado;
     private Boolean entregado; // False si no esta entrgado, True D.L.C.
-    
+
     public Producto() {
     }
 
