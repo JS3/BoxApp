@@ -15,8 +15,8 @@ import java.util.List;
 public interface PedidoStub {
     
     public List<Pedido> getPedidos();
-    public Pedido getPedidoById(Integer idProducto);
+    public Pedido getPedidoByCod(Integer codPedido);
     public List<Pedido> getPedidosBySolicitante(int idSolicitante);
-    public List<Pedido> getPedidosByMensajero(int idSolicitante);
-    public void addProducto(Pedido pedido);
+    public List<Pedido> getPedidosByMensajero(int idMensajero);
+    public void addPedido(Pedido pedido);
 }
