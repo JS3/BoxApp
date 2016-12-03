@@ -14,6 +14,13 @@ public class ProductStubImpl implements ProductStub {
 
     private List<Producto> productos = new ArrayList<>();
 
+    public ProductStubImpl() {
+//        Producto producto = new Producto(0, Producto.ORIGEN, "Nombresito", "No presenta", "Colombia",
+//                "Bogota", "USAs", "Los Mayamis", 2.35, false);
+//
+//        productos.add(producto);
+    }
+
     @Override
     public List<Producto> getProductos() {
         return this.productos;

@@ -1,7 +1,5 @@
 package com.eci.cosw.model;
 
-import java.util.GregorianCalendar;
-
 /**
  * @author Juan Sebastian Martinez Serna
  */
@@ -21,12 +19,12 @@ public class Producto {
     private Double peso;
     private Boolean delicado;
     private Boolean entregado; // False si no esta entrgado, True D.L.C.
-    private GregorianCalendar fechaRegistro;
-    private GregorianCalendar fechaEntrega;
+    
+    public Producto() {
+    }
 
-    public Producto(String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado) {
-//        this.idProducto = idProducto;
-        this.ubicacion = Producto.ORIGEN;
+    public Producto(String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
+        this.ubicacion = ubicacion;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.paisOrigen = paisOrigen;
@@ -35,7 +33,12 @@ public class Producto {
         this.ciudadDestino = ciudadDestino;
         this.peso = peso;
         this.delicado = delicado;
-        this.entregado = false;
+        this.entregado = entregado;
+    }
+
+    public Producto(Integer idProducto, String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
+        this(ubicacion, nombre, descripcion, paisOrigen, ciudadOrigen, paisDestino, ciudadDestino, peso, delicado, entregado);
+        this.idProducto = idProducto;
     }
 
     public Integer getIdProducto() {

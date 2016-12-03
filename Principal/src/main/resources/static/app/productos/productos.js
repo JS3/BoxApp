@@ -24,7 +24,7 @@ angular.module('myApp.productos', ['ngRoute'])
 
             var newProducto =
                 {   nombre        : $scope.nombreProducto,
-                    //ubicacion     : "ORIGEN",
+                    ubicacion     : "ORIGEN",
                     descripcion   : $scope.descripcionProducto,
                     delicado      : $scope.delicadoProducto,
                     paisOrigen    : $scope.paisOrigenProducto,
@@ -33,6 +33,9 @@ angular.module('myApp.productos', ['ngRoute'])
                     ciudadDestino : $scope.ciudadDestinoProducto,
                     peso          : $scope.pesoLibrasProducto
                 };
+//                {"idProducto":0,"ubicacion":"ORIGEN","nombre":"Nombresito","descripcion":"No presenta"
+//                  paisOrigen":"Colombia","ciudadOrigen":"Bogota","paisDestino":"USAs",
+//                  "ciudadDestino":"Los Mayamis","peso":2.35,"delicado":false,"entregado":false}
 
             console.log(newProducto);
 
