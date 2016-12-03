@@ -1,0 +1,45 @@
+<!--MSTRJL-->
+<div ng-show="authenticated">
+
+    <center>
+        <h1>Product</h1>
+        <h3>Product Details</h3>
+    </center>
+
+    <form>
+        <table class="table">
+            <tbody ng-repeat="e in Lista">
+                <tr>
+                    <th>ID</th>
+                    <td>{{e.idProducto}}</td></tr>
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{e.nombre}}</td></tr>
+                <tr>
+                    <th>Ubicación:</th>
+                    <td>{{e.ubicacion}}</td></tr>
+                <tr>
+                    <th>Descripción:</th>
+                    <td>{{e.descripcion}}</td></tr>
+                <tr>
+                    <th>País/Ciudad Origen:</th>
+                    <td>{{e.paisOrigen}}/{{e.ciudadOrigen}}</td></tr>
+                <tr>
+                    <th>País/Ciudad Destino</th>
+                    <td>{{e.paisDestino}}/{{e.ciudadDestino}}</td></tr>
+                <tr>
+                    <th>Peso:</th>
+                    <td>{{e.peso}}</td></tr>
+                <tr>
+                    <th>Delicado:</th>
+                    <td>{{e.delicado}}</td></tr>
+            </tbody>
+        </table>
+    </form>
+
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>

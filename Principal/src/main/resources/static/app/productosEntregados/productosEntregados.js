@@ -10,6 +10,6 @@ angular.module('myApp.productosEntregados', ['ngRoute'])
         });
     }])
 
-    .controller('ProductosCtrl', ['$scope', 'GetPE', function ($scope, Get) {
-        $scope.Lista = Get.query();  
+    .controller('ProductosCtrl', ['$scope', 'GetPE', function ($scope, GetPE) {
+        $scope.Lista = GetPE.query();  
     }]);

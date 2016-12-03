@@ -13,6 +13,7 @@ angular.module('myApp', [
     'myApp.productos',
     'services.module1',
     'myApp.productosEntregados', //MSTRJL agregando Productos Entregados
+    'myApp.detalleProducto', //MSTRJL detalle Producto
     'myApp.version'
 ]).
         config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
@@ -33,7 +34,3 @@ angular.module('myApp', [
                 };
 
             }]);
-
-
-
-
