@@ -13,12 +13,12 @@ public class Pedido {
 
     private Integer codigoPedido = 0;
     private Solicitante solicitante;
-    private Mensajero mensajero;
+    private Producto producto;
     private Viaje viaje;
     
-    public Pedido(Solicitante solicitante, Mensajero mensajero, Viaje viaje) {
+    public Pedido(Solicitante solicitante, Producto producto, Viaje viaje) {
         this.solicitante = solicitante;
-        this.mensajero = mensajero;
+        this.producto = producto;
         this.viaje = viaje;
     }    
 
@@ -38,12 +38,12 @@ public class Pedido {
         this.solicitante = solicitante;
     }
 
-    public Mensajero getMensajero() {
-        return mensajero;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setMensajero(Mensajero mensajero) {
-        this.mensajero = mensajero;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public Viaje getViaje() {
