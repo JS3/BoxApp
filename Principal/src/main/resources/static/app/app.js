@@ -12,6 +12,7 @@ angular.module('myApp', [
     'myApp.viewRegistroSolicitante',
     'myApp.productos',
     'services.module1',
+    'myApp.productosEntregados', //MSTRJL agregando Productos Entregados
     'myApp.version'
 ]).
         config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {

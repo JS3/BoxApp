@@ -1,0 +1,35 @@
+<!--MSTRJL-->
+<div ng-show="authenticated">
+
+    <center>
+        <h1>Product</h1>
+        <h3>List of delivered products</h3>
+    </center>
+
+    <form>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        Nombre del producto:
+                    </th>
+                </tr>
+                <tr ng-repeat="e in Lista">
+                    <td>{{e.nombre}}</td>
+                    <!--
+                    <td>
+                        <label id = "idDescripcionProductoLabel" name = "lbDescripcionProducto"
+                               class = "labelProducto" > Descripcion del producto: </label>
+                    </td>-->
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>

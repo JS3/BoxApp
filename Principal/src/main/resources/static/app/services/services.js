@@ -19,6 +19,10 @@ angular.module('services.module1', ['ngRoute','ngResource'])
      .factory('Get', function($resource) {
         return $resource('/viajes', {},
             {get:{method:'GET', isArray:true}}); 
+    })//MSTRJL 
+     .factory('GetPE', function($resource) { 
+        return $resource('/productos/entregados', {},
+            {get:{method:'GET', isArray:true}}); 
     })
       .factory('Clients', function($resource){
         return $resource('/clients',{},{

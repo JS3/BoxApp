@@ -128,4 +128,35 @@ public class Producto {
     public void setEntregado(Boolean entregado) {
         this.entregado = entregado;
     }
+    
+//MSTRJL CONTRUCTOR PARA PRODUCTO NO ENTREGADO
+    public Producto(String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, 
+            String ciudadDestino, Double peso, Boolean delicado) {
+//        this.idProducto = idProducto;
+        this.ubicacion = Producto.ORIGEN;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.paisOrigen = paisOrigen;
+        this.ciudadOrigen = ciudadOrigen;
+        this.paisDestino = paisDestino;
+        this.ciudadDestino = ciudadDestino;
+        this.peso = peso;
+        this.delicado = delicado;
+        this.entregado = false;
+    }
+    
+//MSTRJL CONTRUCTOR PARA PRODUCTO ENTREGADO
+    public Producto(String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso) {
+//        this.idProducto = idProducto;
+        this.ubicacion = Producto.ORIGEN;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.paisOrigen = paisOrigen;
+        this.ciudadOrigen = ciudadOrigen;
+        this.paisDestino = paisDestino;
+        this.ciudadDestino = ciudadDestino;
+        this.peso = peso;
+        this.delicado = false;
+        this.entregado = true;
+    }
 }

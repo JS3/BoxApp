@@ -13,8 +13,12 @@ import java.util.List;
 public class ProductStubImpl implements ProductStub {
 
     private List<Producto> productos = new ArrayList<>();
-
+    
+//MSTRJL Estos son datos que uso para probar la aplicación, se pueden borrar
     public ProductStubImpl() {
+        productos.add(new Producto("a", "aa", "paisOrigen", "ciudadOrigen", "paisDestino", "ciudadDestino", 1.0));
+        productos.add(new Producto("b", "bb", "paisOrigen", "ciudadOrigen", "paisDestino", "ciudadDestino", 1.0));
+        productos.add(new Producto("c", "cc", "paisOrigen", "ciudadOrigen", "paisDestino", "ciudadDestino", 1.0, true));
 //        Producto producto = new Producto(0, Producto.ORIGEN, "Nombresito", "No presenta", "Colombia",
 //                "Bogota", "USAs", "Los Mayamis", 2.35, false);
 //
