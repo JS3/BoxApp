@@ -43,9 +43,9 @@ public class PedidoController {
         return pedidoStub.getPedidosBySolicitante(idSolicitante);
     }
     
-    @RequestMapping(value = "/Mensajer/{idMensajero}", method = RequestMethod.GET)
-    public List<Pedido> getPedidosByMensajero(@PathVariable("idMensajero") int idMensajero) {
-        return pedidoStub.getPedidosByMensajero(idMensajero);
+    @RequestMapping(value = "/Producto/{idProducto}", method = RequestMethod.GET)
+    public List<Pedido> getPedidosByMensajero(@PathVariable("idProducto") int idProducto) {
+        return pedidoStub.getPedidosByProducto(idProducto);
     }
     
     @RequestMapping(method = RequestMethod.POST)

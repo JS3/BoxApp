@@ -6,6 +6,7 @@
 package com.eci.cosw.stub;
 
 import com.eci.cosw.model.Pedido;
+import com.eci.cosw.model.Producto;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,9 +48,9 @@ public class PedidoStubImpl implements PedidoStub{
     }
 
     @Override
-    public List<Pedido> getPedidosByMensajero(int idMensajero) {
+    public List<Pedido> getPedidosByProducto(int idProducto) {
         List<Pedido> pedidos = new ArrayList<>();
-        this.pedidoList.stream().filter((p) -> (p.getMensajero().getIdSolicitante() == idMensajero)).forEach((p) -> {
+        this.pedidoList.stream().filter((p) -> (p.getProducto().getIdProducto() == idProducto)).forEach((p) -> {
             pedidos.add(p);
         });
         return pedidos;

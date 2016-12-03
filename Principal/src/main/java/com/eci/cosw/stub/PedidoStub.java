@@ -17,6 +17,6 @@ public interface PedidoStub {
     public List<Pedido> getPedidos();
     public Pedido getPedidoByCod(Integer codPedido);
     public List<Pedido> getPedidosBySolicitante(int idSolicitante);
-    public List<Pedido> getPedidosByMensajero(int idMensajero);
+    public List<Pedido> getPedidosByProducto(int idProducto);
     public void addPedido(Pedido pedido);
 }
