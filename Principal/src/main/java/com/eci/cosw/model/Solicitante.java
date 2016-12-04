@@ -2,7 +2,8 @@ package com.eci.cosw.model;
 
 import java.util.Date;
 
-
+//@Entity
+//@Table(name = "Solicitante")
 public class Solicitante {
 
     private int idSolicitante; //Autogenerado
@@ -38,6 +39,12 @@ public class Solicitante {
         this.pais = pais;
         this.municipio = municipio;
         this.codigoPostal = codigoPostal;
+    }
+
+    //@Id
+    //@GeneratedValue
+    public int getIdSolicitante() {
+        return idSolicitante;
     }
 
     public void setNombre(String nombre) {
@@ -84,50 +91,58 @@ public class Solicitante {
         this.codigoPostal = codigoPostal;
     }
 
-    public int getIdSolicitante() {
-        return idSolicitante;
-    }
-
+    //@Column(name="nombre")
     public String getNombre() {
         return nombre;
     }
 
+    //@Column(name="primerApellido")
     public String getPrimerApellido() {
         return primerApellido;
     }
 
+   // @Column(name="segundoApellido")
     public String getSegundoApellido() {
         return segundoApellido;
     }
 
+    //@Column(name="cedula")
     public int getCedula() {
         return cedula;
     }
 
+    //@Column(name="edad")
     public int getEdad() {
         return edad;
     }
 
+    //@Temporal(TemporalType.DATE)
+    //@Column(name="fechaNacimiento")
     public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
+    //@Column(name="telefono")
     public int getTelefono() {
         return telefono;
     }
 
+    //@Column(name="direccion")
     public String getDireccion() {
         return direccion;
     }
 
+    //@Column(name="Pais")
     public String getPais() {
         return pais;
     }
 
+    //@Column(name="municipio")
     public String getMunicipio() {
         return municipio;
     }
 
+    //@Column(name="genero")
     public String getGenero() {
         return genero;
     }
@@ -136,5 +151,6 @@ public class Solicitante {
         this.genero = genero;
     }
 
+    //@Column(name="codigoPostal")
     public int getCodigoPostal() { return codigoPostal; }
 }
