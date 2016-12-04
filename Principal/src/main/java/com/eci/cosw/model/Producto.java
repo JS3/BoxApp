@@ -21,9 +21,12 @@ public class Producto {
     private Boolean entregado; // False si no esta entrgado, True D.L.C.
 
     public Producto() {
+        this.entregado = false;
+        this.ubicacion = Producto.ORIGEN;
     }
 
     public Producto(String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
+        this();
         this.ubicacion = ubicacion;
         this.nombre = nombre;
         this.descripcion = descripcion;
