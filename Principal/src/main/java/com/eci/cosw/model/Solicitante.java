@@ -47,6 +47,10 @@ public class Solicitante {
         return idSolicitante;
     }
 
+    public void setIdSolicitante(int idSolicitante) {
+        this.idSolicitante = idSolicitante;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
