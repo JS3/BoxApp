@@ -7,14 +7,18 @@ package com.eci.cosw.model;
 
 /**
  *
- * @author User
+ * @author Julian Gonzalez Prieto (Anacoreta Avuuna, la Luz del Alba).
  */
 public class Usuario {
 
-    private String user, password, rol;
+    private String user, email, password, rol;
 
-    public Usuario(String user, String password, String rol) {
+    public Usuario() {
+    }
+
+    public Usuario(String user, String email, String password, String rol) {
         setUser(user);
+        setEmail(email);
         setPassword(password);
         setRol(rol);
     }
@@ -41,5 +45,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

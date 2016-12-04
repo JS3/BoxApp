@@ -10,6 +10,7 @@ angular.module('myApp', [
     'myApp.misviajes',
     'myApp.viewLogin',
     'myApp.viewRegistroSolicitante',
+    'myApp.viewSignup',
     'myApp.productos',
     'services.module1',
     'myApp.version'
