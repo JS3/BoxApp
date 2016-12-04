@@ -33,5 +33,10 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final-redhat-1')
+    compile('mysql:mysql-connector-java:6.0.5')
+    compile('log4j:log4j:1.2.17.redhat-1')
+
+    compile('org.hibernate:hibernate-core:5.2.5.Final')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }

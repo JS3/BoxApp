@@ -1,9 +1,15 @@
 package com.eci.cosw.model;
 
+import java.io.Serializable;
+import java.util.GregorianCalendar;
+
 /**
  * @author Juan Sebastian Martinez Serna
  */
-public class Producto {
+
+//@Entity
+//@Table(name = "Producto")
+public class Producto implements Serializable {
 
     public final static String ORIGEN  = "ORIGEN";
     public final static String DESTINO = "DESTINO";
@@ -19,10 +25,12 @@ public class Producto {
     private Double peso;
     private Boolean delicado;
     private Boolean entregado; // False si no esta entrgado, True D.L.C.
+    private GregorianCalendar fechaRegistro;
 
     public Producto() {
         this.entregado = false;
         this.ubicacion = Producto.ORIGEN;
+        this.fechaRegistro = new GregorianCalendar();
     }
 
     public Producto(String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
@@ -42,6 +50,14 @@ public class Producto {
     public Producto(Integer idProducto, String ubicacion, String nombre, String descripcion, String paisOrigen, String ciudadOrigen, String paisDestino, String ciudadDestino, Double peso, Boolean delicado, Boolean entregado) {
         this(ubicacion, nombre, descripcion, paisOrigen, ciudadOrigen, paisDestino, ciudadDestino, peso, delicado, entregado);
         this.idProducto = idProducto;
+    }
+
+    public GregorianCalendar getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(GregorianCalendar fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 
     public Integer getIdProducto() {
