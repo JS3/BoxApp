@@ -1,0 +1,18 @@
+<div>
+    <p>Sign up</p>
+</div>
+<form role="form">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" ng-model="username"/>
+    </div>
+    <div class="form-group">
+        <label for="username">Email:</label>
+        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" id="username" name="username" ng-model="email"/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" ng-model="password"/>
+    </div>
+    <button type="submit" ng-click="register()" class="btn btn-primary">Submit</button>
+</form>

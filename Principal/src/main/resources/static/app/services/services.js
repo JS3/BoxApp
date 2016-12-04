@@ -58,4 +58,8 @@ angular.module('services.module1', ['ngRoute','ngResource'])
                     isArray: true
                 }
             });
+    })
+
+    .factory('signupFactory', function($resource) {
+        return $resource('/user/add');
     });

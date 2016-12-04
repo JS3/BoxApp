@@ -1,32 +1,26 @@
 package com.eci.cosw;
 
+import com.eci.cosw.controller.*;
 import com.eci.cosw.model.*;
 import com.eci.cosw.stub.*;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CsrfFilter;
-import org.springframework.security.web.csrf.CsrfToken;
-import org.springframework.security.web.csrf.CsrfTokenRepository;
-import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
-import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.web.util.WebUtils;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.boot.autoconfigure.security.*;
+import org.springframework.context.annotation.*;
+import org.springframework.core.annotation.*;
+import org.springframework.security.config.annotation.authentication.builders.*;
+import org.springframework.security.config.annotation.method.configuration.*;
+import org.springframework.security.config.annotation.web.builders.*;
+import org.springframework.security.config.annotation.web.configuration.*;
+import org.springframework.security.web.csrf.*;
+import org.springframework.web.filter.*;
+import org.springframework.web.util.*;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
 import java.util.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.domain.*;
 
 @SpringBootApplication
 //@EnableJpaRepositories("com.eci.cosw.repositories")
@@ -42,13 +36,17 @@ public class Lab2Application {
     @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
     protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+        private final UsersStub usersStub = UsersController.usersStub;
+
         @Override
         protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-            UsersStub usersStub = new UsersStubImpl();
             List<Usuario> users = usersStub.getUsers();
 
             for (Usuario user : users) {
-                builder.inMemoryAuthentication().withUser(user.getUser()).password(user.getPassword()).roles(user.getRol());
+                builder.inMemoryAuthentication()
+                        .withUser(user.getUser()).password(user.getPassword()).roles(user.getRol())
+                        .and()
+                        .withUser(user.getEmail()).password(user.getPassword()).roles(user.getRol());
             }
         }
 
