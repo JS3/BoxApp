@@ -4,14 +4,16 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://desarrollo.is.escuelaing.edu.co:3306/bdprueba?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">bdprueba</property>
-    <property name="hibernate.connection.password">bdprueba</property>
+    <property name="hibernate.connection.url">jdbc:mysql://sql9.freemysqlhosting.net:3306/sql9147549?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">sql9147549</property>
+    <property name="hibernate.connection.password">SLSJnAwPv8</property>
     <mapping class="com.eci.cosw.model.Mensajero"/>
     <mapping class="com.eci.cosw.model.Producto"/>
     <mapping class="com.eci.cosw.model.Solicitante"/>
     <mapping class="com.eci.cosw.model.Viaje"/>
     <mapping class="com.eci.cosw.model.Task"/>
+    <mapping class="com.eci.cosw.model.Pedido"/>
+    <mapping class="com.eci.cosw.model.Usuario"/>
     
   </session-factory>
 </hibernate-configuration>
