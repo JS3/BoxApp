@@ -1,5 +1,6 @@
 package com.eci.cosw.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
 //@Entity
@@ -105,7 +106,7 @@ public class Solicitante {
         return primerApellido;
     }
 
-   // @Column(name="segundoApellido")
+    //@Column(name="segundoApellido")
     public String getSegundoApellido() {
         return segundoApellido;
     }
