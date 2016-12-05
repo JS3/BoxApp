@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.misviajes', ['ngRoute'])
+angular.module('myApp.misproductos', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/misviajes', {
-    templateUrl: 'misviajes/misviajes.html',
-    controller: 'misviajesCtrl'
+  $routeProvider.when('/misproductos', {
+    templateUrl: 'misproductos/misproductos.html',
+    controller: 'misproductosCtrl'
   });
 }])
 
-.controller('misviajesCtrl', ['$scope', 'Get', function ($scope, Get) {
+.controller('misproductosCtrl', ['$scope', 'productoGET', function ($scope, Get) {
         $scope.listado = Get.query();  
         
        

@@ -8,6 +8,7 @@ angular.module('myApp', [
     'myApp.view3',
     'myApp.viaje',
     'myApp.misviajes',
+    'myApp.misproductos',
     'myApp.viewLogin',
     'myApp.viewRegistroSolicitante',
     'myApp.viewSignup',
