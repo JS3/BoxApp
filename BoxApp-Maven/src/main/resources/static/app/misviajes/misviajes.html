@@ -28,8 +28,8 @@
    <tr ng-repeat="todo in listado">
           <td>{{todo.origen}}</td>
           <td>{{todo.destino}}</td>
-          <td>{{todo.ida}}</td>
-          <td>{{todo.llegada}}</td>
+          <td>{{todo.ida |date:'MM/dd/yyyy' }}</td>
+          <td>{{todo.llegada  |date:'MM/dd/yyyy'}}</td>
         </tr>
    
   </tbody>
