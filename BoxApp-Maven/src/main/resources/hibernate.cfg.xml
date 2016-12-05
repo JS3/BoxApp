@@ -7,11 +7,16 @@
     <property name="hibernate.connection.url">jdbc:mysql://sql9.freemysqlhosting.net:3306/sql9147549?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">sql9147549</property>
     <property name="hibernate.connection.password">SLSJnAwPv8</property>
+    
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+    <property name="use_sql_comments">true</property>
+    
     <mapping class="com.eci.cosw.model.Mensajero"/>
     <mapping class="com.eci.cosw.model.Producto"/>
     <mapping class="com.eci.cosw.model.Solicitante"/>
     <mapping class="com.eci.cosw.model.Viaje"/>
-    <mapping class="com.eci.cosw.model.Task"/>
+    <!--mapping class="com.eci.cosw.model.Task"/-->
     <mapping class="com.eci.cosw.model.Pedido"/>
     <mapping class="com.eci.cosw.model.Usuario"/>
     

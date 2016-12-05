@@ -5,13 +5,19 @@
  */
 package com.eci.cosw.model;
 
+import java.io.*;
+import javax.persistence.*;
+
 /**
  *
  * @author Julian Gonzalez Prieto (Anacoreta Avuuna, la Luz del Alba).
  */
-public class Usuario {
+//@Entity
+//@Table(name = "Usuarios")
+public class Usuario implements Serializable {
 
     private String user, email, password, rol;
+//    private Solicitante solicitante;
 
     public Usuario() {
     }
@@ -23,14 +29,17 @@ public class Usuario {
         setRol(rol);
     }
 
-    public String getRol() {
-        return rol;
+//    @Id
+//    @Column(name = "correo", nullable = false)
+    public String getEmail() {
+        return email;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
+//    @Column(name = "username", nullable = false, unique = true)
     public String getUser() {
         return user;
     }
@@ -39,6 +48,7 @@ public class Usuario {
         this.user = user;
     }
 
+//    @Column(name = "contrasena", nullable = false)
     public String getPassword() {
         return password;
     }
@@ -47,11 +57,21 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "Solicitante_idSolicitante")
+//    public Solicitante getSolicitante() {
+//        return solicitante;
+//    }
+//
+//    public void setSolicitante(Solicitante solicitante) {
+//        this.solicitante = solicitante;
+//    }
+
+    public String getRol() {
+        return rol;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }
