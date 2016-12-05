@@ -14,8 +14,8 @@ import java.util.Date;
 public class Viaje {
     private String Origen;
     private String Destino;
-    private String Ida;
-    private String Llegada;
+    private Date Ida;
+    private Date Llegada;
     
     public Viaje(){
     
@@ -36,19 +36,19 @@ public class Viaje {
         this.Destino = Destino;
     }
 
-    public String getIda() {
+    public Date getIda() {
         return Ida;
     }
 
-    public void setIda(String ida) {
+    public void setIda(Date ida) {
         this.Ida = ida;
     }
 
-    public String getLlegada() {
+    public Date getLlegada() {
         return Llegada;
     }
 
-    public void setLlegada(String llegada) {
+    public void setLlegada(Date llegada) {
         this.Llegada = llegada;
     }
       
