@@ -1,0 +1,32 @@
+<!--MSTRJL-->
+<div ng-show="authenticated">
+
+    <center>
+        <h1>Producto</h1>
+        <h3>Lista de productos entregados</h3>
+    </center>
+    <form>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        Nombre del producto:
+                    </th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="l in listaProducto">
+                    <td>{{l.nombre}}</td>
+                    <td>
+                        <button ng-click="mover(l.idProducto)"> Detalles>> </button>
+                    </td>   
+                </tr>    
+            </tbody>
+        </table>
+    </form>
+
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>

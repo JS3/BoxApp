@@ -1,0 +1,20 @@
+<!--MSTRJL-->
+<div ng-show="authenticated">
+    <center>
+        <a href="../../../../java/com/eci/cosw/model/Producto.java"></a>
+        <h1>Producto</h1>
+        <h3>Detalles</h3>
+    </center>
+    Razón : <input ng-model = "razon"> <br>
+    <p ng-model="mensaje" ng-model="solicitante">
+        {{solicitante.nombre}}{{mensaje}}
+    <br>
+    <button ng-click="agregarSolicitante()"> 
+        Incribirse 
+    </button> 
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>       

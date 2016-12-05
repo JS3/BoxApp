@@ -19,6 +19,26 @@ angular.module('services.module1', ['ngRoute','ngResource'])
      .factory('Get', function($resource) {
         return $resource('/viajes', {},
             {get:{method:'GET', isArray:true}}); 
+    })//MSTRJL Productos Entregados
+    .factory('GetPE', function($resource) { 
+        return $resource('/productos/entregados', {},
+            {get:{method:'GET', isArray:true}}); 
+    })//MSTRJL Detalle de Producto
+    .factory('Detalle', function($resource) { 
+        return $resource('/productos/:n', {},
+            {get:{method:'GET', isArray:false}}); 
+    })//MSTRJL Productos Pendientes
+    .factory('GetPP', function($resource) { 
+        return $resource('/productos/pendientes', {},
+            {get:{method:'GET', isArray:true}}); 
+    })//MSTRJL Solicitante para convertirse en Mensajero
+    .factory('GetSM', function($resource) { 
+        return $resource('/solicitante/:n', {},
+            {get:{method:'GET', isArray:false}}); 
+    })//MSTRJL Se llama para crear un mensajero
+    .factory('mensajeros', function($resource) {            
+        return $resource('/mensajero',{},
+            {get:{ method:'GET', isArray: true}});
     })
       .factory('Clients', function($resource){
         return $resource('/clients',{},{

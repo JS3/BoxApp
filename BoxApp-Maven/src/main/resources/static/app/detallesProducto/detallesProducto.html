@@ -1,0 +1,55 @@
+<!--MSTRJL-->
+<div ng-show="authenticated">
+    <center>
+        <a href="../../../../java/com/eci/cosw/model/Producto.java"></a>
+        <h1>Producto</h1>
+        <h3>Detalles</h3>
+    </center>
+    <form>
+        <table class="table">
+            <tbody>            
+                <tr>
+                    <th>ID:</th>
+                    <td ng-model="idProducto">{{idProducto}}</td>
+                </tr>  
+                <tr>
+                    <th>Nombre:</th>
+                    <td ng-model="nombre">{{nombre}}</td>
+                </tr>             
+                <tr>
+                    <th>Ubicación:</th>
+                    <td ng-model="ubicacion">{{ubicacion}}</td>
+                </tr>    
+                <tr>
+                    <th>Descripción:</th>
+                    <td ng-model="descripcion">{{descripcion}}</td>
+                </tr>                 
+                <tr>
+                    <th>Pais Origen/Ciudad Origen:</th>
+                    <td ng-model="paisOrigen" ng-model="ciudadOrigen">{{paisOrigen}}/{{ciudadOrigen}}</td>
+                </tr>             
+                <tr>
+                    <th>Pais Destino/Ciudad Destino</th>
+                    <td ng-model="paisDestino" ng-model="ciudadDestino">{{paisDestino}}/{{ciudadDestino}}</td>
+                </tr>             
+                <tr>
+                    <th>Peso:</th>
+                    <td ng-model="peso">{{peso}}</td>
+                </tr>             
+                <tr>
+                    <th>Delicado:</th>
+                    <td ng-model="delicado">{{delicado}}</td>
+                </tr>             
+                <tr>
+                    <th>Entregado:</th>
+                    <td ng-model="entregado">{{entregado}}</td>
+                </tr>          
+            </tbody>
+        </table>
+    </form>
+</div>
+<div ng-show="!authenticated">
+    <center>
+        <h1 style="color:red;">Por favor autentiquese para continuar</h1>
+    </center>
+</div>

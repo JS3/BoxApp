@@ -14,6 +14,10 @@ angular.module('myApp', [
     'myApp.viewSignup',
     'myApp.productos',
     'services.module1',
+    'myApp.productosEntregados', //MSTRJL agregando Productos Entregados
+    'myApp.detallesProducto', //MSTRJL Detalle de producto
+    'myApp.productosPendientes', //MSTRJL Productos Pendientes
+    'myApp.perfilMensajero', //MSTRJL Convertirse en Mensajero
     'myApp.version'
 ]).
         config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
@@ -27,6 +31,7 @@ angular.module('myApp', [
                 $scope.logout = function () {
                     $http.post('/logout', {}).success(function () {
                         $rootScope.authenticated = false;
+                        $rootScope.n = ""; //MSTRJL valor de id para el producto
                         $location.path("/view1");
                     }).error(function (data) {
                         $rootScope.authenticated = false;

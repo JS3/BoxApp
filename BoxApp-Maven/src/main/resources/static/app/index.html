@@ -97,6 +97,18 @@
                                 <a href="#/productos"><i class="fa fa-files-o fa-fw"></i> Registrar Producto</a>
                                 <a href="#/misproductos"><i class="fa fa-files-o fa-fw"></i> Mis Productos</a>
                             </li>
+                            <!--MSTRJL DELIVERED PRODUCTS PROPERTY --> 
+                            <li ng-show="authenticated">
+                                <a href="#/productosEntregados"><i class="fa fa-files-o fa-fw"></i> Productos Entregados </a>
+                            </li>
+                            <!--MSTRJL PENDING PRODUCTS PROPERTY --> 
+                            <li ng-show="authenticated">
+                                <a href="#/productosPendientes"><i class="fa fa-files-o fa-fw"></i> Productos Pendientes </a>
+                            </li>
+                            <!--MSTRJL SOLICITER PROFILE PROPERTY --> 
+                            <li ng-show="authenticated">
+                                <a href="#/perfilMensajero"><i class="fa fa-files-o fa-fw"></i> Convertirse en Mensajero </a>
+                            </li>
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
@@ -162,6 +174,15 @@
         <script src="viewRegistroSolicitante/viewRegistroSolicitante.js"></script>
         <script src="productos/productos.js"></script>
         <script src="viewSignup/viewSignup.js"></script>
+
+        <!--MSTRJL DELIVERED PRODUCTS PROPERTY --> 
+        <script src="productosEntregados/productosEntregados.js"></script>        
+        <!--MSTRJL PRODUCTS DETAILS -->
+        <script src="detallesProducto/detallesProducto.js"></script>        
+        <!--MSTRJL PENDING PRODUCTS -->
+        <script src="productosPendientes/productosPendientes.js"></script>  
+        <!--MSTRJL SOLICITER PROFILE -->
+        <script src="perfilMensajero/perfilMensajero.js"></script>  
 
         <script src="components/version/version.js"></script>
         <script src="components/version/version-directive.js"></script>
