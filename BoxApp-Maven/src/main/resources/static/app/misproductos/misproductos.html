@@ -1,5 +1,5 @@
 <div>
-    <p>Mis viajes ingresados</p>
+    <p>Mis productos ingresados</p>
     
 </div>
 <div ng-show="authenticated"> 
@@ -7,29 +7,29 @@
   <tbody>
      <tr>
       <th>
-          <h3>Origen</h3>
+          <h3>Nombre</h3>
           
       </th>
       <th>
-          <h3>Destino</h3>
+          <h3>peso</h3>
        
       </th>
       <th>
-          <h3>Fecha de ida</h3>
+          <h3>Pais origen</h3>
        
       </th>
       <th>
-          <h3>Fecha de llegada</h3>
+          <h3>Pais Destino</h3>
        
       </th>
      
     </tr> 
       
    <tr ng-repeat="todo in listado">
-          <td>{{todo.origen}}</td>
-          <td>{{todo.destino}}</td>
-          <td>{{todo.ida}}</td>
-          <td>{{todo.llegada}}</td>
+          <td>{{todo.nombre}}</td>
+          <td>{{todo.peso}}</td>
+          <td>{{todo.paisOrigen}}</td>
+          <td>{{todo.paisDestino}}</td>
         </tr>
    
   </tbody>

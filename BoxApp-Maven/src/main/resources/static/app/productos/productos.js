@@ -46,6 +46,7 @@ angular.module('myApp.productos', ['ngRoute'])
             alert("Producto registrado: \n"
                 + "Nombre      -> " + newProducto.nombre + "\n"
                 + "Descripcion -> " + newProducto.descripcion + "\n");
+        
 
             $scope.nombreProducto        = "";
             $scope.descripcionProducto   = "";
@@ -58,4 +59,8 @@ angular.module('myApp.productos', ['ngRoute'])
 
         }
 
-    }]);
+
+
+    }])
+
+;
