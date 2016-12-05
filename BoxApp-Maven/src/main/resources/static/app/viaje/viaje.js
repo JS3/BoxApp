@@ -18,11 +18,16 @@ angular.module('myApp.viaje', ['ngRoute'])
         
         $scope.agregarViaje = function() {
             
-         
+        var r = confirm("Seguro quieres ingresar el viaje?");
+            if (r == true) {
+                Post.save({origen:$scope.Origen,destino:$scope.Destino,ida:$scope.Ida,llegada:$scope.Llegada});
+            } else {
+                alert("Has cancelado");
+            }
             
-              window.alert("se ha ingresado un viaje");
+           
                     
-            Post.save({origen:$scope.Origen,destino:$scope.Destino,ida:$scope.Ida,llegada:$scope.Llegada});
+           
                   
                     
                 
