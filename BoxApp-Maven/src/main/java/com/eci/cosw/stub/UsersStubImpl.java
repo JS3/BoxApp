@@ -34,4 +34,40 @@ public class UsersStubImpl implements UsersStub {
     public void addUser(Usuario user) {
         users.add(user);
     }
+
+    @Override
+    public Usuario getUserByUsername(String username) {
+        Usuario response = null;
+        for (Usuario user : users) {
+            if (user.getUser().equals(username)) {
+                response = user;
+                break;
+            }
+        }
+        return response;
+    }
+
+    @Override
+    public Usuario getUserByEmail(String email) {
+        Usuario response = null;
+        for (Usuario user : users) {
+            if (user.getEmail().equals(email)) {
+                response = user;
+                break;
+            }
+        }
+        return response;
+    }
+
+    @Override
+    public Usuario loginUser(String name, String pass) {
+        Usuario response = null;
+        for (Usuario user : users) {
+            if ((user.getUser().equals(name) || user.getEmail().equals(name)) && user.getPassword().equals(pass)) {
+                response = user;
+                break;
+            }
+        }
+        return response;
+    }
 }

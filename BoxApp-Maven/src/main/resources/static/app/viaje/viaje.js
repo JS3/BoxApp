@@ -20,15 +20,14 @@ angular.module('myApp.viaje', ['ngRoute'])
             
          
             
-                    
+              window.alert("se ha ingresado un viaje");
                     
             Post.save({origen:$scope.Origen,destino:$scope.Destino,ida:$scope.Ida,llegada:$scope.Llegada});
                   
                     
                 
                 }
-               
-           
+    
                    
 }]);
 

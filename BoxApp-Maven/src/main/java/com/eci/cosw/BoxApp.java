@@ -21,6 +21,9 @@ import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import org.springframework.boot.autoconfigure.domain.*;
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import org.springframework.security.core.authority.*;
 
 @SpringBootApplication
 //@EnableJpaRepositories("com.eci.cosw.repositories")
@@ -36,18 +39,30 @@ public class BoxApp {
     @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
     protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-        private final UsersStub usersStub = UsersController.usersStub;
+        UsersStub usersStub = UsuariosController.usersStub;
 
         @Override
         protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-            List<Usuario> users = usersStub.getUsers();
 
-            for (Usuario user : users) {
-                builder.inMemoryAuthentication()
-                        .withUser(user.getUser()).password(user.getPassword()).roles(user.getRol())
-                        .and()
-                        .withUser(user.getEmail()).password(user.getPassword()).roles(user.getRol());
-            }
+            builder.authenticationProvider(new AuthenticationProvider() {
+                @Override
+                public Authentication authenticate(Authentication auth) throws AuthenticationException {
+                    String name = auth.getName();
+                    String pass = auth.getCredentials().toString();
+                    Usuario usuario = usersStub.loginUser(name, pass);
+                    if (usuario != null) {
+                        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+                        authorities.add(new SimpleGrantedAuthority(usuario.getRol()));
+                        return new UsernamePasswordAuthenticationToken(name, pass, authorities);
+                    }
+                    return null;
+                }
+
+                @Override
+                public boolean supports(Class<?> type) {
+                    return type.equals(UsernamePasswordAuthenticationToken.class);
+                }
+            });
         }
 
         @Override
@@ -56,7 +71,7 @@ public class BoxApp {
                     .httpBasic()
                     .and()
                     .authorizeRequests()
-                    .antMatchers("/app/**", "/logout", "/login").permitAll()
+                    .antMatchers("/app/**", "/logout", "/login", "/users/**").permitAll()
                     .anyRequest().authenticated().and()
                     .logout().logoutSuccessUrl("/")
                     .and().csrf()
