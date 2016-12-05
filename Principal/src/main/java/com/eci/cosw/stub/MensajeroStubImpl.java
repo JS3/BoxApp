@@ -51,12 +51,12 @@ public class MensajeroStubImpl implements MensajeroStub{
         mensajeros.add(mensajero);
     }
     
-    @Override
-    public void addMensajeroBySolicitante(Solicitante solicitante) {
-        mensajeros.add(new Mensajero(
-                solicitante.getIdSolicitante(), solicitante.getNombre(), solicitante.getPrimerApellido(), solicitante.getSegundoApellido(), 
-                solicitante.getCedula(), solicitante.getEdad(), solicitante.getFechaNacimiento(), solicitante.getTelefono(), 
-                solicitante.getDireccion(), solicitante.getPais(), solicitante.getMunicipio(), solicitante.getCodigoPostal(), 0
-            ));
-    }
+//    @Override
+//    public void addMensajeroBySolicitante(Solicitante solicitante) {
+//        mensajeros.add(new Mensajero(
+//                solicitante.getIdSolicitante(), solicitante.getNombre(), solicitante.getPrimerApellido(), solicitante.getSegundoApellido(), 
+//                solicitante.getCedula(), solicitante.getEdad(), solicitante.getFechaNacimiento(), solicitante.getTelefono(), 
+//                solicitante.getDireccion(), solicitante.getPais(), solicitante.getMunicipio(), solicitante.getCodigoPostal(), 0
+//            ));
+//    }
 }

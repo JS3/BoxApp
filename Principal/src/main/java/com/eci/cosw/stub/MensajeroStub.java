@@ -15,5 +15,5 @@ public interface MensajeroStub {
     public Mensajero getMensajeroCedula(int cedula);
 
     public void addMensajeros(Mensajero mensajero);
-    public void addMensajeroBySolicitante(Solicitante solicitante);
+//    public void addMensajeroBySolicitante(Solicitante solicitante);
 }
