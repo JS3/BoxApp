@@ -1,7 +1,9 @@
 package com.eci.cosw.controller;
 
 import com.eci.cosw.model.Mensajero;
+import com.eci.cosw.model.Solicitante;
 import com.eci.cosw.stub.MensajeroStub;
+import com.eci.cosw.stub.SolicitanteStub;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,8 @@ import java.util.List;
 @RequestMapping(value = "/mensajero")
 public class MensajeroController {
 
+    @Autowired
+    SolicitanteStub solicitanteStub;
     @Autowired
     private MensajeroStub mensajeroStub;
 
@@ -41,6 +45,9 @@ public class MensajeroController {
         mensajeroStub.addMensajeros(mensajero);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+    
+//    @RequestMapping(method = RequestMethod.POST)
+//    public void addMensajeroId(@RequestBody Solicitante s) {mensajeroStub.addMensajeroBySolicitante(solicitanteStub.getSolicitanteById(s.getIdSolicitante()));}    
 
 //    @RequestMapping(method = RequestMethod.POST)
 //    public ResponseEntity<?> addSolicitante(@RequestBody Solicitante solicitante){

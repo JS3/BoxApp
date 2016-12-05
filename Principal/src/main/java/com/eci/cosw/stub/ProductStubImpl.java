@@ -19,6 +19,10 @@ public class ProductStubImpl implements ProductStub {
         productos.add(new Producto("a", "aa", "paisOrigen", "ciudadOrigen", "paisDestino", "ciudadDestino", 1.0));
         productos.add(new Producto("b", "bb", "paisOrigen", "ciudadOrigen", "paisDestino", "ciudadDestino", 1.0));
         productos.add(new Producto("c", "cc", "paisOrigen", "ciudadOrigen", "paisDestino", "ciudadDestino", 1.0, true));
+        
+        productos.get(0).setIdProducto(0);
+        productos.get(1).setIdProducto(1);
+        productos.get(2).setIdProducto(2);
 //        Producto producto = new Producto(0, Producto.ORIGEN, "Nombresito", "No presenta", "Colombia",
 //                "Bogota", "USAs", "Los Mayamis", 2.35, false);
 //

@@ -2,6 +2,7 @@ package com.eci.cosw.stub;
 
 
 import com.eci.cosw.model.Mensajero;
+import com.eci.cosw.model.Solicitante;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -48,5 +49,14 @@ public class MensajeroStubImpl implements MensajeroStub{
     @Override
     public void addMensajeros(Mensajero mensajero) {
         mensajeros.add(mensajero);
+    }
+    
+    @Override
+    public void addMensajeroBySolicitante(Solicitante solicitante) {
+        mensajeros.add(new Mensajero(
+                solicitante.getIdSolicitante(), solicitante.getNombre(), solicitante.getPrimerApellido(), solicitante.getSegundoApellido(), 
+                solicitante.getCedula(), solicitante.getEdad(), solicitante.getFechaNacimiento(), solicitante.getTelefono(), 
+                solicitante.getDireccion(), solicitante.getPais(), solicitante.getMunicipio(), solicitante.getCodigoPostal(), 0
+            ));
     }
 }

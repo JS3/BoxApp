@@ -8,9 +8,9 @@ public interface SolicitanteStub {
 
     List<Solicitante> getSolicitantes();
 
-    Solicitante getSolicitanteById(int id);
+    Solicitante getSolicitanteById(Integer id);
 
-    Solicitante getSolicitanteByCedula(int cedula);
+    Solicitante getSolicitanteByCedula(Integer cedula);
 
     void addSolicitante(Solicitante solicitante);
 }

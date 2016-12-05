@@ -23,10 +23,11 @@ public class SolicitanteController {
 
     @RequestMapping(value = "/{idSolicitante}", method = RequestMethod.GET)
     public Solicitante getSolicitanteById(@PathVariable("idSolicitante") Integer idSolicitante) {
+//        return new Solicitante();
         return solicitanteStub.getSolicitanteById(idSolicitante);
     }
 
-    @RequestMapping(value = "/{cedulaSolicitante}", method = RequestMethod.GET)
+    @RequestMapping(value = "/cedula/{cedulaSolicitante}", method = RequestMethod.GET)
     public Solicitante getSolicitantesByCedula(@PathVariable("cedulaSolicitante") Integer cedulaSolicitante){
         return solicitanteStub.getSolicitanteByCedula(cedulaSolicitante);
     }
