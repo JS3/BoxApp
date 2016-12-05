@@ -61,5 +61,18 @@ angular.module('services.module1', ['ngRoute','ngResource'])
     })
 
     .factory('signupFactory', function($resource) {
-        return $resource('/user/add');
-    });
+        return $resource('/users', {}, { 
+            get: { 
+                method: 'GET', 
+                isArray: true
+            }
+        });
+    })
+        
+    .factory('signupUsernameValidation', function($resource) {
+        return $resource('/users/username/:username');
+        })
+        
+    .factory('signupEmailValidation', function($resource) {
+        return $resource('/users/email/:email');
+        });
