@@ -1,0 +1,158 @@
+<div ng-controller="ViewRegistroSolicitanteCtrl">
+    <h1>registro de solicitante</h1>
+    <form name="formulario">
+        <table class="table registro">
+            <tbody>
+
+            <tr>
+                <th>
+                <strong><label for="nombre">Nombre: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "nombrers" type="text" name="nombre" id ="nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+"
+                       title="No debe incluir numeros" placeholder="Nombre Completo" required><br>
+                </th>
+            <tr>
+
+            <tr>
+                <th>
+                <strong><label for="primerApellido">Primer Apellido: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "primerApellidors" type="text" name="primerApellido" id="primerApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+"
+                   title="No debe incluir numeros" placeholder="Primer Apellido" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label for="SegundoApellido">Segundo Apellido: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "segundoApellidors" type="text" name="SegundoApellido" id="SegundoApellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+"
+                   title="No debe incluir numeros" placeholder="Segundo Apellido" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label for="cedula">Cedula: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "cedulars" type="text" name="cedula" id="cedula" pattern="[0-9]+"
+                       title="Debe incluir solo numeros" placeholder="Cedula de ciudadania" required><br>
+                </th>
+            </tr>
+
+
+            <tr>
+                <th>
+                <strong><label for="edad">Edad: </label></strong>
+                </th>
+                <th>
+                <input  ng-model = "edadrs" type="number" name="edad" id="edad" min="18" required placeholder="18" style="color:black;"><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label for="bday">Fecha de nacimiento</label></strong>
+                </th>
+                <th>
+                <input ng-model = "fechaNacimientors" type="date" name="cumpleaños" id="bday"><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label>Genero: </label></strong>
+                </th>
+                <th>
+                <form>
+                <select ng-model = "generors" name="genero">
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                </form>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label>Numero de Telefono: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "telefonors" type="tel" name="telefono" pattern="[0-9]+" title="Debe incluir solo numeros"
+                       placeholder="Telefono celular o fijo" required><br>
+                </th>
+            <tr>
+
+            <tr>
+                <th>
+                <strong><label>Direccion: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "direccionrs" type="text" name="direccion" placeholder="Direccion de residencia" required><br>
+                </th>
+             </tr>
+
+            <tr>
+                <th>
+                <strong><label>Pais de residencia: </label></strong>
+                </th>
+                <th>
+                <select ng-model = "paisrs" name="pais">
+                <optgroup label="América">
+                    <option value="1">Argentina</option>
+                    <option value="2">Espania</option>
+                    <option value="3">Mexico</option>
+                    <option value="4">Guatemala</option>
+                    <option value="5">Honduras</option>
+                    <option value="7">El Salvador</option>
+                    <option value="8">Venezuela</option>
+                    <option value="9">Colombia</option>
+                    <option value="10">Cuba</option>
+                    <option value="11">Bolivia</option>
+                    <option value="13">Perú</option>
+                    <option value="14">Ecuador</option>
+                    <option value="15">Paraguay</option>
+                    <option value="16">Uruguay</option>
+                    <option value="17">Chile</option>
+                </optgroup>
+                </select><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label>Codigo Postal: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "codigoPostalrs" type="text" name="codigoP" pattern="[0-9]+" title="Debe incluir solo numeros"
+                       placeholder="Codigo Postal" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                <strong><label>Municipio: </label></strong>
+                </th>
+                <th>
+                <input ng-model = "municipiors" type="text" name="municipio" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+"
+                       title="No debe incluir numeros" placeholder="Municipio" required><br>
+                </th>
+            </tr>
+
+            </tbody>
+        </table>
+
+     <br>
+     <br>
+
+     <div>
+        <input type="submit" ng-click="addSolicitante()" value="Registrarme!">
+     </div>
+
+    </form>
+</div>
