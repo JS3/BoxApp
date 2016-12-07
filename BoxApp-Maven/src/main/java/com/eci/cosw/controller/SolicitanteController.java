@@ -19,14 +19,16 @@ public class SolicitanteController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Solicitante> getSolicitantes(){
          return solicitanteStub.getSolicitantes();
-        }
+    }
 
     @RequestMapping(value = "/{idSolicitante}", method = RequestMethod.GET)
     public Solicitante getSolicitanteById(@PathVariable("idSolicitante") Integer idSolicitante) {
         return solicitanteStub.getSolicitanteById(idSolicitante);
+//        Solicitante();
+                
     }
 
-    @RequestMapping(value = "/{cedulaSolicitante}", method = RequestMethod.GET)
+    @RequestMapping(value = "/cedula/{cedulaSolicitante}", method = RequestMethod.GET)
     public Solicitante getSolicitantesByCedula(@PathVariable("cedulaSolicitante") Integer cedulaSolicitante){
         return solicitanteStub.getSolicitanteByCedula(cedulaSolicitante);
     }
@@ -41,5 +43,7 @@ public class SolicitanteController {
         solicitanteStub.addSolicitante(solicitante);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+    
+    //MstrJL
 
 }

@@ -158,4 +158,9 @@ public class Solicitante {
 
     //@Column(name="codigoPostal")
     public int getCodigoPostal() { return codigoPostal; }
+    
+    public Solicitante(int idSolicitante, String nombre)
+    {
+        this.idSolicitante=idSolicitante; this.nombre = nombre;
+    }
 }
